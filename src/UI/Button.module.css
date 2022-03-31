@@ -1,0 +1,18 @@
+.btn {
+  padding: 1rem;
+  border: none;
+  background: none;
+}
+
+.btn:hover {
+  color: rgb(5, 141, 5);
+}
+.btn:hover,
+.btn:active {
+  border-radius: 50%;
+  border-color: rgb(5, 141, 5);
+}
+.btn.active {
+  background-color: rgb(128, 31, 31);
+  color: white;
+}
