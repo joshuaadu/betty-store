@@ -2,11 +2,12 @@
   font-size: 2rem;
   font-style: italic;
   font-family: "Krub", sans-serif;
+  font-weight: bold;
 }
 .part1 {
-  color: rgb(128, 31, 31);
+  color: rgb(243, 68, 72);
 }
 
 .part2 {
-  color: rgb(5, 141, 5);
+  color: rgb(151, 182, 62);
 }
