@@ -1,7 +1,6 @@
-import { NavLink } from "react-router-dom";
-import Button from "../UI/Button";
 import Logo from "../UI/Logo";
 import classes from "./MainNavigation.module.css";
+import CustomLink from "../UI/CustomLink";
 const MainNavigation = (props) => {
   return (
     <header className={classes.header}>
@@ -9,19 +8,10 @@ const MainNavigation = (props) => {
       <nav className={classes.nav}>
         <ul>
           <li>
-            <NavLink
-              to="login"
-              className={({ isActive }) => {
-                return isActive ? classes.active : "";
-              }}
-            >
-              <Button>Log in</Button>
-            </NavLink>
+            <CustomLink to="login">Log in</CustomLink>
           </li>
           <li>
-            <NavLink to="signup">
-              <Button>Sign Up</Button>
-            </NavLink>
+            <CustomLink to="signin">Sign Up</CustomLink>
           </li>
         </ul>
       </nav>
