@@ -19,7 +19,7 @@ const MainNavigation = (props) => {
           </li>
           <li>
             <NavLink
-              to="store"
+              to="shop"
               className={({ isActive }) => {
                 return isActive ? classes.active : "";
               }}
