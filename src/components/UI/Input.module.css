@@ -11,16 +11,16 @@
   max-width: 30rem;
 }
 
-.input-wrapper:active,
+.input-wrapper:focus,
 .input-wrapper:hover {
   background-color: #edf1f4;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 input {
   border: none;
   background-color: transparent;
-  color: #696666;
+  color: #4d4a4a;
 }
 input:focus,
 input:active {
@@ -43,8 +43,11 @@ input:active {
   background-color: #3c9842;
   color: white;
   border: 3px solid white;
-  margin-left: auto;
   /* display: flex; */
 
   /* background-color: blue; */
+}
+
+.icon-right {
+  margin-left: auto;
 }

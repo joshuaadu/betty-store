@@ -1,4 +1,4 @@
-import UserForm from "../components/UserForm";
+import AuthForm from "../components/AuthForm";
 import img from "../images/grocery-liuba-bilyk--unsplash.jpg";
 import styles from "./Login.module.css";
 const Login = (props) => {
@@ -9,7 +9,7 @@ const Login = (props) => {
       </div>
       <section className={styles["login-section"]}>
         <h1>Log In</h1>
-        <UserForm />
+        <AuthForm />
       </section>
     </div>
   );
