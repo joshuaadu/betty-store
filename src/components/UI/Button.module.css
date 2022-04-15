@@ -1,18 +1,19 @@
 .btn {
   padding: 1rem;
+  margin-top: 1rem;
   border: none;
   background: none;
+  color: white;
+  padding: 0.6rem 2rem;
+  border-radius: 2rem;
+  transition: all 0.2s ease-out;
+  background-color: #3d8bf7;
 }
 
-.btn:hover {
+/* .btn:hover {
   color: rgb(5, 141, 5);
-}
-.btn:hover,
+} */
+
 .btn:active {
-  border-radius: 50%;
-  border-color: rgb(5, 141, 5);
-}
-.btn.active {
-  background-color: rgb(128, 31, 31);
-  color: white;
+  transform: scale(0.9);
 }
