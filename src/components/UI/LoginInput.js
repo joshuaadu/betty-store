@@ -6,17 +6,30 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useState } from "react";
 
+const textValidFn = (text) => {
+  return text.length > 4;
+};
+
 const TextInput = ({ id, label }) => {
+  const [inputValid, setInputValid] = useState(false);
+
+  const onChangeHandler = (event) => {
+    setInputValid(textValidFn(event.target.value));
+  };
   return (
     <>
       <AccountBoxIcon className={styles.icon} />
       <span className={styles["input-span"]}>
         <label htmlFor={id}>{label}</label>
-        <input id={id} />
+        <input id={id} onChange={onChangeHandler} />
       </span>
-      <span className={`${styles["validation-icon"]} ${styles["icon-right"]}`}>
-        <CheckIcon />
-      </span>
+      {inputValid && (
+        <span
+          className={`${styles["validation-icon"]} ${styles["icon-right"]}`}
+        >
+          <CheckIcon />
+        </span>
+      )}
     </>
   );
 };
