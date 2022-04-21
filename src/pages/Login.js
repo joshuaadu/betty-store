@@ -8,7 +8,7 @@ const Login = (props) => {
         <img src={img} alt="Grocery Store attendant" />
       </div>
       <section className={styles["login-section"]}>
-        <h1>Log In</h1>
+        <h1>Welcome Back :)</h1>
         <AuthForm />
       </section>
     </div>
