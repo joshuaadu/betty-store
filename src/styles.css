@@ -19,3 +19,8 @@ body {
   padding: 2rem clamp(0.5rem, 2vw + 0.6rem, 4rem);
   background: linear-gradient(to right, white, #effafd);
 }
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
