@@ -1,0 +1,13 @@
+.sidebar {
+	width: max(12rem, 20%);
+	background-color: #262f3c;
+	color: #8691a8;
+
+	ul {
+		list-style: none;
+		display: grid;
+		// justify-content: start;
+		// align-items: start;
+		padding: 0;
+	}
+}

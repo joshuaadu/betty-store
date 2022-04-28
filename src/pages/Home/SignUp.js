@@ -1,4 +1,10 @@
+import Layout from "../../layout/Layout";
+
 const SignUp = (props) => {
-  return <h1>Sign Up</h1>;
+	return (
+		<Layout>
+			<h1>Sign Up</h1>;
+		</Layout>
+	);
 };
 export default SignUp;
