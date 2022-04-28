@@ -1,10 +1,10 @@
 import classes from "./Button.module.css";
 const Button = (props) => {
-  const { children, active, alternate, type, color, backgroundColor } = props;
+  const { children, active, alternate, type, style } = props;
 
   return (
     <button
-      style={color && backgroundColor ? { color, backgroundColor } : {}}
+      style={{ ...style }}
       type={type ? type : "button"}
       className={`${classes.btn} ${active ? classes.active : ""} ${
         alternate ? classes.active : ""

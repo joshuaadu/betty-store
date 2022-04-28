@@ -8,11 +8,13 @@ import GroupsIcon from "@mui/icons-material/Groups";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import ListOutlinedIcon from "@mui/icons-material/List";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+import Logo from "../../components/UI/Logo";
 
 import styles from "./SideBar.module.scss";
 const SideBar = (props) => {
 	return (
 		<section className={styles.sidebar}>
+			<Logo />
 			<nav>
 				<ul>
 					<li>
