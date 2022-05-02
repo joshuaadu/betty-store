@@ -17,38 +17,38 @@ const SideBar = (props) => {
 			<Logo />
 			<nav>
 				<ul>
-					<li>
+					<li className={styles["main-nav-item"]}>
 						<DashboardOutlinedIcon />
-						Dashboard
+						<span>Dashboard</span>
 					</li>
-					<li>
+					<li className={styles["main-nav-item"]}>
 						<ListOutlinedIcon />
-						Products
+						<span>Products</span>
 					</li>
-					<li>
-						<PeopleOutlinedIcon />
-						Customers
-					</li>
-					<li>
+					<li className={styles["main-nav-item"]}>
 						<InventoryOutlinedIcon />
-						Sales
+						<span>Sales</span>
 					</li>
-					<li>
-						<LocalShippingOutlinedIcon />
-						Supplier
-					</li>
-					<li>
+					<li className={styles["main-nav-item"]}>
 						<ShoppingCartOutlinedIcon />
-						Purchase
+						<span>Purchase</span>
 					</li>
-					<li>
+					<li className={styles["main-nav-item"]}>
+						<PeopleOutlinedIcon />
+						<span>Customers</span>
+					</li>
+					<li className={styles["main-nav-item"]}>
+						<LocalShippingOutlinedIcon />
+						<span>Supplier</span>
+					</li>
+					<li className={styles["main-nav-item"]}>
 						<BarChartOutlinedIcon />
-						Reports
+						<span>Reports</span>
 					</li>
 
-					<li>
+					<li className={styles["main-nav-item"]}>
 						<SettingsOutlinedIcon />
-						Settings
+						<span>Settings</span>
 					</li>
 				</ul>
 			</nav>
