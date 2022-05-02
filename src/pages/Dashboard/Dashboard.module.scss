@@ -1,6 +1,12 @@
 .dashboard {
-	background-color: #eff2f6;
+	background-color: #ebf9fc;
+	color: #909196;
 	display: flex;
 	width: 100%;
 	min-height: 100vh;
+}
+
+.main-container {
+	padding: 2rem;
+	width: 100%;
 }

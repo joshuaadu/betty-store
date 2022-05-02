@@ -6,8 +6,9 @@ const Dashboard = (props) => {
 	return (
 		<div className={styles.dashboard}>
 			<SideBar />
-			<Header notification="2" username="Betty Adu-Mensah" title="Manager" />
-			<main></main>
+			<div className={styles["main-container"]}>
+				<Header notification="2" username="Betty Adu-Mensah" title="Manager" />
+			</div>
 		</div>
 	);
 };
