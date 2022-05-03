@@ -11,44 +11,102 @@ import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined
 import Logo from "../../components/UI/Logo";
 
 import styles from "./SideBar.module.scss";
+import { NavLink } from "react-router-dom";
 const SideBar = (props) => {
 	return (
 		<section className={styles.sidebar}>
 			<Logo />
 			<nav>
 				<ul>
-					<li>
-						<DashboardOutlinedIcon />
-						Dashboard
+					<li className={styles["main-nav-item"]}>
+						<NavLink
+							to="/"
+							exact
+							className={({ isActive }) => {
+								return isActive ? styles.active : "";
+							}}
+						>
+							<DashboardOutlinedIcon className={styles["sidebar-icon"]} />
+							<span>Dashboard</span>
+						</NavLink>
 					</li>
-					<li>
-						<ListOutlinedIcon />
-						Products
+					<li className={styles["main-nav-item"]}>
+						<NavLink
+							to="products"
+							className={({ isActive }) => {
+								return isActive ? styles.active : "";
+							}}
+						>
+							<ListOutlinedIcon className={styles["sidebar-icon"]} />
+							<span>Products</span>
+						</NavLink>
 					</li>
-					<li>
-						<PeopleOutlinedIcon />
-						Customers
+					<li className={styles["main-nav-item"]}>
+						<NavLink
+							to="sales"
+							className={({ isActive }) => {
+								return isActive ? styles.active : "";
+							}}
+						>
+							<InventoryOutlinedIcon className={styles["sidebar-icon"]} />
+							<span>Sales</span>
+						</NavLink>
 					</li>
-					<li>
-						<InventoryOutlinedIcon />
-						Sales
+					<li className={styles["main-nav-item"]}>
+						<NavLink
+							to="purchases"
+							className={({ isActive }) => {
+								return isActive ? styles.active : "";
+							}}
+						>
+							<ShoppingCartOutlinedIcon className={styles["sidebar-icon"]} />
+							<span>Purchases</span>
+						</NavLink>
 					</li>
-					<li>
-						<LocalShippingOutlinedIcon />
-						Supplier
+					<li className={styles["main-nav-item"]}>
+						<NavLink
+							to="customers"
+							className={({ isActive }) => {
+								return isActive ? styles.active : "";
+							}}
+						>
+							<PeopleOutlinedIcon className={styles["sidebar-icon"]} />
+							<span>Customers</span>
+						</NavLink>
 					</li>
-					<li>
-						<ShoppingCartOutlinedIcon />
-						Purchase
+					<li className={styles["main-nav-item"]}>
+						<NavLink
+							to="suppliers"
+							className={({ isActive }) => {
+								return isActive ? styles.active : "";
+							}}
+						>
+							<LocalShippingOutlinedIcon className={styles["sidebar-icon"]} />
+							<span>Suppliers</span>
+						</NavLink>
 					</li>
-					<li>
-						<BarChartOutlinedIcon />
-						Reports
+					<li className={styles["main-nav-item"]}>
+						<NavLink
+							to="reports"
+							className={({ isActive }) => {
+								return isActive ? styles.active : "";
+							}}
+						>
+							<BarChartOutlinedIcon className={styles["sidebar-icon"]} />
+							<span>Reports</span>
+						</NavLink>
 					</li>
 
-					<li>
-						<SettingsOutlinedIcon />
-						Settings
+					<li className={styles["main-nav-item"]}>
+						<NavLink
+							to="settings"
+							className={({ isActive }) => {
+								return isActive ? styles.active : "";
+							}}
+						>
+							<SettingsOutlinedIcon className={styles["sidebar-icon"]} />
+							<span>Settings</span>
+						</NavLink>
 					</li>
 				</ul>
 			</nav>
