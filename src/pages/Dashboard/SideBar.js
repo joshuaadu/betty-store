@@ -20,7 +20,7 @@ const SideBar = (props) => {
 				<ul>
 					<li className={styles["main-nav-item"]}>
 						<NavLink
-							to="/"
+							to="./"
 							exact
 							className={({ isActive }) => {
 								return isActive ? styles.active : "";

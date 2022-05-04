@@ -18,7 +18,7 @@ const Dashboard = (props) => {
 			<div className={styles["main-container"]}>
 				<Header notification="2" username="Betty Adu-Mensah" title="Manager" />
 				<Routes>
-					<Route path="/" element={<Home />} />
+					<Route path="/" index element={<Home />} />
 					<Route path="products" element={<Products />} />
 					<Route path="reports" element={<Reports />} />
 					<Route path="suppliers" element={<Suppliers />} />
