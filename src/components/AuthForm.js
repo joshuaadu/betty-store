@@ -18,7 +18,7 @@ const AuthForm = (props) => {
 		<form className={styles.form} onSubmit={submitHandler}>
 			<LoginInput label="Username" type="userText" />
 			<LoginInput label="Password" type="password" />
-			<Button type="submit" alternate>
+			<Button style={{ margin: "1rem 0" }} type="submit" alternate>
 				Login Now
 			</Button>
 		</form>
