@@ -12,3 +12,30 @@
 		padding: 0;
 	}
 }
+
+.main-nav-item {
+	// justify-content: space-between;
+
+	a {
+		gap: 1rem;
+		display: flex;
+		width: 100%;
+		padding-left: 0.5rem;
+	}
+
+	a.active {
+		// border-radius: 25%;
+		background-color: #fef3f1;
+		& .sidebar-icon {
+			color: white;
+			background-color: rgb(243, 68, 72);
+			border-radius: 50%;
+			padding: 0.1rem;
+		}
+	}
+
+	a:hover {
+		border: none;
+		color: rgb(243, 68, 72);
+	}
+}
