@@ -1,0 +1,7 @@
+@use "../../../../styles/scss/card";
+.card {
+	@extend %card-wrapper;
+	padding: 2rem 1rem;
+	display: flex;
+	justify-content: space-between;
+}
