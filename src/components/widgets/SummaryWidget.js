@@ -19,7 +19,13 @@ const colorStyles = {
 	},
 };
 
-const SummaryWidget = ({ icon, color, label, value }) => {
+const SummaryWidget = ({ icon, color, label, value, isCurrency }) => {
+	if (isCurrency) {
+		value = new Intl.NumberFormat("en-gb", {
+			style: "currency",
+			currency: "GHS",
+		}).format(value);
+	}
 	return (
 		<div className={styles.card}>
 			<div
