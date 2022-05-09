@@ -1,0 +1,22 @@
+.container {
+	width: 100%;
+	min-height: 100%;
+
+	.header {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+
+		h2 {
+			color: black;
+		}
+	}
+
+	.summary {
+		width: 100%;
+		display: flex;
+		justify-content: space-evenly;
+		gap: 2rem;
+		flex-wrap: wrap;
+	}
+}
