@@ -1,0 +1,30 @@
+@use "../../styles/scss/card";
+.card {
+	@extend %card-wrapper;
+	padding: 1rem;
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+
+	.icon {
+		height: 40px;
+		width: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.details {
+		span {
+			display: block;
+		}
+
+		.value {
+			margin-bottom: 0.5rem;
+			color: black;
+			color: rgb(128, 0, 128);
+		}
+	}
+}
