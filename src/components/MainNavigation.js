@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import Logo from "../components/UI/Logo";
+import Logo from "./UI/Logo";
 import classes from "./MainNavigation.module.css";
 const MainNavigation = (props) => {
 	return (

@@ -1,4 +1,4 @@
-import styles from "./SummaryWidget.module.scss";
+import styles from "./KPIWidget.module.scss";
 
 const colorStyles = {
 	1: {
@@ -18,8 +18,8 @@ const colorStyles = {
 		color: "rgb(0, 0, 255)",
 	},
 };
-
-const SummaryWidget = ({ icon, color, label, value, isCurrency }) => {
+// Key Performance Index Component
+const KPIWidget = ({ icon, color, label, value, isCurrency }) => {
 	if (isCurrency) {
 		value = new Intl.NumberFormat("en-gb", {
 			style: "currency",
@@ -27,7 +27,7 @@ const SummaryWidget = ({ icon, color, label, value, isCurrency }) => {
 		}).format(value);
 	}
 	return (
-		<div className={styles.card}>
+		<article className={styles.card}>
 			<div
 				className={styles.icon}
 				style={color ? colorStyles[color] : colorStyles[1]}
@@ -38,8 +38,8 @@ const SummaryWidget = ({ icon, color, label, value, isCurrency }) => {
 				<span className={styles.value}>{value}</span>
 				<span className={styles.label}>{label}</span>
 			</div>
-		</div>
+		</article>
 	);
 };
 
-export default SummaryWidget;
+export default KPIWidget;

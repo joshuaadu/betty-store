@@ -1,5 +1,5 @@
 import Header from "./Header";
-import SideBar from "./SideBar";
+import NavBar from "./NavBar";
 import styles from "./Dashboard.module.scss";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Views/Home";
@@ -14,8 +14,8 @@ import Purchases from "./Views/Purchases";
 const Dashboard = (props) => {
 	return (
 		<div className={styles.dashboard}>
-			<SideBar />
-			<div className={styles["main-container"]}>
+			<NavBar />
+			<main className={styles["main-container"]}>
 				<Header notification="2" username="Betty Adu-Mensah" title="Manager" />
 				<Routes>
 					<Route path="/" index element={<Home />} />
@@ -27,7 +27,7 @@ const Dashboard = (props) => {
 					<Route path="settings" element={<Settings />} />
 					<Route path="purchases" element={<Purchases />} />
 				</Routes>
-			</div>
+			</main>
 		</div>
 	);
 };
