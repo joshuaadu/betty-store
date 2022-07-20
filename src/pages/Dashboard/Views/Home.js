@@ -8,11 +8,11 @@ import MoneyRoundedIcon from "@mui/icons-material/MoneyRounded";
 const Home = (props) => {
 	return (
 		<section className={styles.container}>
-			<div className={styles.header}>
+			<div className={styles.heading}>
 				<h2>Dashboard</h2>
 			</div>
 			<div className={styles.summary}>
-				<KPIWidget
+				<KPIWidget 
 					icon={<BarChartOutlinedIcon fontSize="large" />}
 					label="Total Sales"
 					value="2000"
