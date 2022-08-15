@@ -19,7 +19,6 @@ const NavBar = (props) => {
 				<li className={styles["main-nav-item"]}>
 					<NavLink
 						to="./"
-						exact
 						className={({ isActive }) => {
 							return isActive ? styles.active : "";
 						}}
