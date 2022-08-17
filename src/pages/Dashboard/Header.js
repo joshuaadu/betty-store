@@ -34,7 +34,7 @@ const Header = ({ notification, username, title }) => {
 						src="https://source.unsplash.com/random/?people"
 						alt="User profile"
 						loading="lazy"
-					/>
+					/> 
 				</div>
 				<div className={styles["user-details"]}>
 					<span className={styles.username}>{username}</span>
