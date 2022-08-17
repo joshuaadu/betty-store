@@ -8,7 +8,7 @@ import TakeoutDiningOutlinedIcon from "@mui/icons-material/TakeoutDiningOutlined
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 import Logo from "../../components/UI/Logo";
 
-import styles from "./NavBar.module.scss";
+import styles from "../../styles/NavBar.module.scss";
 import { NavLink } from "react-router-dom";
 const NavBar = (props) => {
 	return (
