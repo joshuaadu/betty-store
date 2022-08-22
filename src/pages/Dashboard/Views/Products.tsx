@@ -3,6 +3,9 @@ import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import styles from "../../../styles/Products.module.scss";
 import ListSelector from "../../../components/UI/selectors/ListSelector";
 
+const DUMMY_LIST = ["List1", "Short List", "Very long list", "List4"];
+const DUMMY_LIST2 = ["List1", "Short", "Very list", "List4"];
+
 const Products = () => {
 	return (
 		<>
@@ -13,9 +16,9 @@ const Products = () => {
 					<span>NEW PRODUCT</span>
 				</Button>
 				<div className={styles.controls}>
-					<ListSelector label="Sort by" list={[]} />
-					<ListSelector label="Sort by" list={[]} />
-					<ListSelector label="Collection Type" list={[]} />
+					<ListSelector label="Sort by" list={DUMMY_LIST2} />
+					<ListSelector label="Sort by" list={DUMMY_LIST} />
+					<ListSelector label="Collection Type" list={DUMMY_LIST} />
 				</div>
 			</header>
 		</>
