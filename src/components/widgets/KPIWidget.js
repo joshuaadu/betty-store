@@ -1,4 +1,4 @@
-import styles from "./KPIWidget.module.scss";
+import styles from "../../styles/KPIWidget.module.scss";
 
 const colorStyles = {
 	1: {

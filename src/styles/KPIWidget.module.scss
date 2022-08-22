@@ -1,4 +1,4 @@
-@use "../../styles/scss/card";
+@use "./card";
 .card {
 	@extend %card-wrapper;
 	padding: 1rem;

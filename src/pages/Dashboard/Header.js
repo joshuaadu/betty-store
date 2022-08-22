@@ -2,7 +2,7 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import LogoutIcon from "@mui/icons-material/Logout";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import styles from "./Header.module.scss";
+import styles from "../../styles/Header.module.scss";
 import Button from "../../components/UI/Button";
 import { useNavigate } from "react-router-dom";
 const Header = ({ notification, username, title }) => {
@@ -34,7 +34,7 @@ const Header = ({ notification, username, title }) => {
 						src="https://source.unsplash.com/random/?people"
 						alt="User profile"
 						loading="lazy"
-					/>
+					/> 
 				</div>
 				<div className={styles["user-details"]}>
 					<span className={styles.username}>{username}</span>

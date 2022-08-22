@@ -1,4 +1,4 @@
-@use "../../styles/scss/card";
+@use "./card";
 
 .header {
 	display: flex;
@@ -29,6 +29,7 @@
 
 .title {
 	font-size: 13px;
+	font-weight: 100;
 }
 .header-icons {
 	width: 4.5rem;

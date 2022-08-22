@@ -1,8 +1,8 @@
 import Header from "./Header";
 import NavBar from "./NavBar";
-import styles from "./Dashboard.module.scss";
+import styles from "../../styles/Dashboard.module.scss";
 import { Route, Routes } from "react-router-dom";
-import Home from "./Views/Home";
+import Home from "./Views";
 import Suppliers from "./Views/Suppliers";
 import Settings from "./Views/Settings";
 import Products from "./Views/Products";

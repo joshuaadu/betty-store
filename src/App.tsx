@@ -5,7 +5,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Login from "./pages/Home/Login";
 import SignUp from "./pages/Home/SignUp";
 import Shop from "./pages/Home/onlineShop";
-import Dashboard from "./pages/Dashboard/Dashboard";
+import Dashboard from "./pages/Dashboard";
 
 export default function App() {
 	return (
