@@ -13,7 +13,10 @@ const ListSelector = ({ label, list }: Props) => {
 
 	useEffect(() => {
 		const eventHandler = (event: Event) => {
-			if (!selectRef.current?.contains(event.target as HTMLElement)) {
+			if (
+				selectRef.current &&
+				!selectRef.current?.contains(event.target as HTMLElement)
+			) {
 				setOpenDropdown(false);
 				console.log("Close");
 			}
