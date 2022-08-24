@@ -1,0 +1,17 @@
+@use "./card";
+.table {
+	@extend %card-wrapper;
+	margin-top: 2rem;
+
+	width: 100%;
+	background-color: white;
+	padding: 0.6rem;
+
+	.header {
+	}
+	th {
+		position: sticky;
+		top: 0;
+		vertical-align: bottom;
+	}
+}
