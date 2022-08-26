@@ -5,16 +5,22 @@ const Table = ({ keys, data }: any) => {
 		<table className={styles.table}>
 			<thead className={styles.header}>
 				<tr>
-					{keys.map((key: string) => (
-						<th>{key}</th>
+					<th>
+						<input type="checkbox" />
+					</th>
+					{keys.map((key: string, index: number) => (
+						<th key={index}>{key}</th>
 					))}
 				</tr>
 			</thead>
 			<tbody>
-				{data.products.map((item: object | any) => (
-					<tr>
-						{keys.map((key: string) => (
-							<td>{item[key.toLowerCase()]}</td>
+				{data.products.map((item: object | any, index: number) => (
+					<tr key={index}>
+						<td>
+							<input type="checkbox" />
+						</td>
+						{keys.map((key: string, index: number) => (
+							<td key={index}>{item[key.toLowerCase()]}</td>
 						))}
 					</tr>
 				))}
