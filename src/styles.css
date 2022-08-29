@@ -2,9 +2,20 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+:root {
+	--light-border-color: rgb(161, 160, 160, 0.5);
+	--main-bg-color: white;
+}
+
+html {
+	scroll-behavior: smooth;
+	scrollbar-width: thin;
+}
+
 * {
 	box-sizing: border-box;
 }
+
 .App {
 	font-family: sans-serif;
 	height: 100%;
