@@ -37,9 +37,9 @@
 
 
 # compiled output
-/backend//dist
+/backend/dist
 /backend/node_modules
-/backend/
+
 # Logs
 /backend/logs
 /backend/*.log
@@ -51,11 +51,11 @@
 
 # OS
 /backend/.DS_Store
-/backend/
+
 # Tests
 /backend/coverage
 /backend/.nyc_output
-/backend/
+
 # IDEs and editors
 /backend/.idea
 /backend/.project
@@ -64,7 +64,7 @@
 /backend/*.launch
 /backend/.settings/
 /backend/*.sublime-workspace
-/backend/
+
 # IDE - VSCode
 /backend/.vscode/*
 /backend/!.vscode/settings.json
