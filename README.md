@@ -1,0 +1,2 @@
+# Betty Store Management App
+
