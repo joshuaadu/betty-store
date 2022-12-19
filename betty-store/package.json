@@ -4,8 +4,12 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
+    "start:dev": "nx serve api",
     "build": "nx build",
     "test": "nx test"
+  },
+  "prisma": {
+    "schema": "/libs/api/data-access-db/src/lib/schema.prisma"
   },
   "private": true,
   "dependencies": {
