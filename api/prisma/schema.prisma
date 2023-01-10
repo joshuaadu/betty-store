@@ -16,9 +16,11 @@ model User {
   password   String
   first_name String
   last_name  String
+  role       Role     @default(USER)
   telephone  Int      @unique()
   address    String
   created_at DateTime
+  updated_at DateTime
 }
 
 model Product {
@@ -87,4 +89,10 @@ model File {
   url           String // A public URL to reference the file. Updated automatically if file content changes.
   width         Int // Image width in pixels, if applicable.
   Image         Image[]
+}
+
+enum Role {
+  ADMIN
+  MANAGER
+  USER
 }
