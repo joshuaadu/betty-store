@@ -11,31 +11,34 @@ datasource db {
 }
 
 model User {
-  id         String   @id @default(uuid())
-  username   String
+  id         String   @id @default(uuid()) @db.Uuid() // @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  username   String   @unique
   password   String
   first_name String
   last_name  String
   role       Role     @default(USER)
   telephone  Int      @unique()
   address    String
-  created_at DateTime
-  updated_at DateTime
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@unique([username, password])
 }
 
 model Product {
-  id          String     @id
+  id          Int     @id @default(autoincrement())
   name        String
   description String
   active      Boolean
   attributes  Json
-  categories  Category[]
+  // category_id Category @relation(fields: [])
+  // categories  Category[]
 
   categoryId   Int
   cost         Float
   currency     String
-  date_created DateTime
-  date_updated DateTime
+  date_created DateTime @default(now())
+  date_updated DateTime @updatedAt
   discontinued Boolean
   images       Json[]
   meta_title   String // Page title used to override product name in storefronts.
@@ -62,9 +65,11 @@ model Product {
 }
 
 model Category {
-  id       Int       @id @default(autoincrement())
-  name     String
-  products Product[]
+  id   Int    @id @default(autoincrement())
+  name String
+
+  productId String?
+  // Product   Product? @relation(fields: [productId], references: [id])
 }
 
 model Image {
