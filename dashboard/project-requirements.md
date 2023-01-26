@@ -51,3 +51,7 @@ See [MDN HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) to learn more.
 - Unit tests: Unit tests only test the smallest units of an application in isolation. We will be using [Jest](https://jestjs.io/) to unit-test the shared components of our application.
 - Integration tests: Integration tests test multiple units at once. They are very useful for testing the communication between multiple different parts of the application. We will be using [React Testing Library](https://testing-library.com/) to test our pages.
 - End-to-end tests: End-to-end tests allow us to test our application’s most important parts end to end, meaning we can test the entire flow. Usually, the most important end-to-end tests should test the most critical features. For this kind of testing, we will be using [Cypress](https://www.cypress.io/).
+
+
+
+Reference: [React Application Architecture for Production](https://learning.oreilly.com/library/view/react-application-architecture/9781801070539/) by [Alan Alickovic](https://github.com/alan2207)
