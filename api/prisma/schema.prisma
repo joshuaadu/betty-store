@@ -26,15 +26,15 @@ model User {
 }
 
 model Product {
-  id          Int     @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   name        String
   description String
   active      Boolean
   attributes  Json
-  // category_id Category @relation(fields: [])
+  category_id Int
+  categoryId  Category @relation(fields: [category_id], references: [id])
   // categories  Category[]
 
-  categoryId   Int
   cost         Float
   currency     String
   date_created DateTime @default(now())
@@ -70,6 +70,7 @@ model Category {
 
   productId String?
   // Product   Product? @relation(fields: [productId], references: [id])
+  Product   Product[]
 }
 
 model Image {

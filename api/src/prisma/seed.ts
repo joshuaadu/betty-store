@@ -2,6 +2,10 @@
 // Create a seed script that will populate the database with some dummy data.
 
 import { PrismaClient } from '@prisma/client';
+import { faker } from '@faker-js/faker';
+
+const randomName = faker.name.fullName(); // Rowan Nikolaus
+const randomEmail = faker.internet.email(); // Kassandra.Haley@erich.biz
 
 // initialize Prisma Client
 const prisma = new PrismaClient();
@@ -14,6 +18,7 @@ async function main() {
   //     create: { first_name: 'Jos' },
   //   });
   //   console.log({ user });
+  console.log(randomName, randomEmail);
 }
 
 // execute the main function
