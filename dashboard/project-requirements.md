@@ -1,4 +1,4 @@
-# Project Requirements
+# Dashboard Project Requirements
 
 ## Project structure
 
