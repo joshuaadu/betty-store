@@ -40,6 +40,8 @@
 - [Flowbite](https://flowbite.com/)
 - [TailwindUIKit](https://tailwinduikit.com/)
 - [headlessUI](https://headlessui.com/)
+- [SailboatUI](https://sailboatui.com/)
+- [Tremor: React Dashboard Components](https://www.tremor.so/)
 
 ## Authentication
 
