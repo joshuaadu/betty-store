@@ -50,6 +50,12 @@ export default function SideBar(props: any) {
 						<li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
 							<div className="flex items-center">
 								<DeliverablesIcon />
+								<span className="text-sm  ml-2">Sales</span>
+							</div>
+						</li>
+						<li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
+							<div className="flex items-center">
+								<DeliverablesIcon />
 								<span className="text-sm  ml-2">Deliverables</span>
 							</div>
 						</li>
@@ -109,6 +115,12 @@ export default function SideBar(props: any) {
 							<div className="flex items-center">
 								<PerformanceIcon />
 								<span className="text-sm  ml-2">Performance</span>
+							</div>
+						</li>
+						<li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
+							<div className="flex items-center">
+								<DeliverablesIcon />
+								<span className="text-sm  ml-2">Sales</span>
 							</div>
 						</li>
 						<li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
