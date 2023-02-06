@@ -60,7 +60,7 @@ export default function LoginPage() {
 							</p>
 						</div>
 						<button className="mt-6 px-4 py-3 lg:max-w-max text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none">
-							subscribe
+							Login
 						</button>
 					</form>
 				</div>
