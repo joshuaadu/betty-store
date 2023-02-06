@@ -45,6 +45,7 @@
 - [SailboatUI](https://sailboatui.com/)
 - [Tremor: React Dashboard Components](https://www.tremor.so/)
 - [React Select](https://react-select.com/home)
+- [React Data Table Component](https://react-data-table-component.netlify.app/?path=/story/getting-started-intro--page)
 
 ## Authentication
 
@@ -57,6 +58,12 @@ See [MDN HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) to learn more.
 - Integration tests: Integration tests test multiple units at once. They are very useful for testing the communication between multiple different parts of the application. We will be using [React Testing Library](https://testing-library.com/) to test our pages.
 - End-to-end tests: End-to-end tests allow us to test our application’s most important parts end to end, meaning we can test the entire flow. Usually, the most important end-to-end tests should test the most critical features. For this kind of testing, we will be using [Cypress](https://www.cypress.io/).
 
+
+## Tech
+
+- [React](https://beta.reactjs.org/)
+- [Nextjs 13](https://beta.nextjs.org/docs)
+- [React TypeScript](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup)
 
 
 Reference: [React Application Architecture for Production](https://learning.oreilly.com/library/view/react-application-architecture/9781801070539/) by [Alan Alickovic](https://github.com/alan2207)
