@@ -32,8 +32,10 @@
 - Form state: This should handle form inputs, validation, and other aspects. We will be using the [React Hook Form library](https://react-hook-form.com/) to handle forms in our application and [Zod](https://zod.dev/)
 - URL state: This type of state is often overlooked yet very powerful. URL and query params can also be considered as pieces of state. This is especially useful when we want to deep-link some part of the view. Capturing the state in the URL makes it very easy to share it.
 
-## Styling
+## Styling & Component UI
 
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Tailwind CheetSheet](https://nerdcave.com/tailwind-cheat-sheet)
 - [HyperUI](https://www.hyperui.dev/)
 - [MerakiUI](https://merakiui.com/)
 - [DaisyUI](https://daisyui.com/)
@@ -42,11 +44,16 @@
 - [headlessUI](https://headlessui.com/)
 - [SailboatUI](https://sailboatui.com/)
 - [Tremor: React Dashboard Components](https://www.tremor.so/)
+- [React Select](https://react-select.com/home)
+- [React Data Table Component](https://react-data-table-component.netlify.app/?path=/story/getting-started-intro--page)
 
 ## Authentication
 
 The authentication of our application will be [cookie-based](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies), meaning that on a successful auth request, a cookie will be attached to the headers, which will handle user authentication on the server. We are choosing cookie-based authentication because it is more secure.
 See [MDN HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) to learn more.
+NB: Other resources:
+- [Email Only Authentication](https://www.youtube.com/watch?v=b6qHfPdv4Y8)
+- [HTTP Networking](https://www.youtube.com/watch?v=2JYT5f2isg4&t=18s)
 
 ## Testing
 
@@ -54,6 +61,12 @@ See [MDN HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) to learn more.
 - Integration tests: Integration tests test multiple units at once. They are very useful for testing the communication between multiple different parts of the application. We will be using [React Testing Library](https://testing-library.com/) to test our pages.
 - End-to-end tests: End-to-end tests allow us to test our application’s most important parts end to end, meaning we can test the entire flow. Usually, the most important end-to-end tests should test the most critical features. For this kind of testing, we will be using [Cypress](https://www.cypress.io/).
 
+
+## Tech
+
+- [React](https://beta.reactjs.org/)
+- [Nextjs 13](https://beta.nextjs.org/docs)
+- [React TypeScript](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup)
 
 
 Reference: [React Application Architecture for Production](https://learning.oreilly.com/library/view/react-application-architecture/9781801070539/) by [Alan Alickovic](https://github.com/alan2207)

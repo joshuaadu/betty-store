@@ -7,9 +7,9 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
+		<html lang="en" className="h-full">
 			<head />
-			<body>{children}</body>
+			<body className="h-full overflow-hidden">{children}</body>
 		</html>
 	);
 }

@@ -3,9 +3,9 @@ import React from "react";
 
 export default function Avatar() {
 	return (
-		<div className="flex flex-col items-center mt-6 -mx-2">
+		<div className="flex flex-col items-center mt-2 -mx-2">
 			<Image
-				className="object-cover w-24 h-24 mx-2 rounded-full"
+				className="object-cover w-14 h-14 mx-2 rounded-full"
 				src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
 				width={500}
 				height={500}

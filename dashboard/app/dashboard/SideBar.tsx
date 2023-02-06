@@ -34,23 +34,23 @@ export default function SideBar(props: any) {
 								<DashboardIcon />
 								<span className="text-sm  ml-2">Dashboard</span>
 							</div>
-							<div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">
-								5
-							</div>
 						</li>
 						<li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
 							<div className="flex items-center">
 								<ProductIcon />
 								<span className="text-sm  ml-2">Products</span>
 							</div>
-							<div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">
-								8
-							</div>
 						</li>
 						<li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
 							<div className="flex items-center">
 								<PerformanceIcon />
 								<span className="text-sm  ml-2">Performance</span>
+							</div>
+						</li>
+						<li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
+							<div className="flex items-center">
+								<DeliverablesIcon />
+								<span className="text-sm  ml-2">Sales</span>
 							</div>
 						</li>
 						<li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
@@ -63,9 +63,6 @@ export default function SideBar(props: any) {
 							<div className="flex items-center">
 								<InvoicesIcon />
 								<span className="text-sm  ml-2">Invoices</span>
-							</div>
-							<div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">
-								25
 							</div>
 						</li>
 						<li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
@@ -107,23 +104,23 @@ export default function SideBar(props: any) {
 								<DashboardIcon />
 								<span className="text-sm  ml-2">Dashboard</span>
 							</div>
-							<div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">
-								5
-							</div>
 						</li>
 						<li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
 							<div className="flex items-center">
 								<ProductIcon />
 								<span className="text-sm  ml-2">Products</span>
 							</div>
-							<div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">
-								8
-							</div>
 						</li>
 						<li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
 							<div className="flex items-center">
 								<PerformanceIcon />
 								<span className="text-sm  ml-2">Performance</span>
+							</div>
+						</li>
+						<li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
+							<div className="flex items-center">
+								<DeliverablesIcon />
+								<span className="text-sm  ml-2">Sales</span>
 							</div>
 						</li>
 						<li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
@@ -136,9 +133,6 @@ export default function SideBar(props: any) {
 							<div className="flex items-center">
 								<InvoicesIcon />
 								<span className="text-sm  ml-2">Invoices</span>
-							</div>
-							<div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">
-								25
 							</div>
 						</li>
 						<li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
