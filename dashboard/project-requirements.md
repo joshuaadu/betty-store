@@ -32,8 +32,10 @@
 - Form state: This should handle form inputs, validation, and other aspects. We will be using the [React Hook Form library](https://react-hook-form.com/) to handle forms in our application and [Zod](https://zod.dev/)
 - URL state: This type of state is often overlooked yet very powerful. URL and query params can also be considered as pieces of state. This is especially useful when we want to deep-link some part of the view. Capturing the state in the URL makes it very easy to share it.
 
-## Styling
+## Styling & Component UI
 
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Tailwind CheetSheet](https://nerdcave.com/tailwind-cheat-sheet)
 - [HyperUI](https://www.hyperui.dev/)
 - [MerakiUI](https://merakiui.com/)
 - [DaisyUI](https://daisyui.com/)
@@ -42,6 +44,7 @@
 - [headlessUI](https://headlessui.com/)
 - [SailboatUI](https://sailboatui.com/)
 - [Tremor: React Dashboard Components](https://www.tremor.so/)
+- [React Select](https://react-select.com/home)
 
 ## Authentication
 
