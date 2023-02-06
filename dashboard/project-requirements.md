@@ -51,6 +51,9 @@
 
 The authentication of our application will be [cookie-based](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies), meaning that on a successful auth request, a cookie will be attached to the headers, which will handle user authentication on the server. We are choosing cookie-based authentication because it is more secure.
 See [MDN HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) to learn more.
+NB: Other resources:
+- [Email Only Authentication](https://www.youtube.com/watch?v=b6qHfPdv4Y8)
+- [HTTP Networking](https://www.youtube.com/watch?v=2JYT5f2isg4&t=18s)
 
 ## Testing
 
