@@ -47,6 +47,7 @@
 - [React Select](https://react-select.com/home)
 - [React Data Table Component](https://react-data-table-component.netlify.app/?path=/story/getting-started-intro--page)
 - [React Datepicker](https://reactdatepicker.com/)
+- [react-date-range](https://hypeserver.github.io/react-date-range/)
 
 ## Authentication
 
