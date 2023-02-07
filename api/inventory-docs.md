@@ -4,7 +4,8 @@
 
 ### Schema
 
-`{
+```
+{
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Product",
   "type": "object",
@@ -63,7 +64,8 @@
   createdAt: DateTime!
   updatedAt: DateTime!
   category: Category!
-}`
+}
+```
 
 This model defines a Product object with the following fields:
 
@@ -119,7 +121,8 @@ In a product catalog, the relationship between products and categories is typica
 
 Here's an example of how you can create a schema for products and categories using a join table in a relational database such as MySQL or PostgreSQL:
 
-`CREATE TABLE products (
+```
+CREATE TABLE products (
 id INT AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
 description TEXT,
@@ -139,7 +142,8 @@ category_id INT NOT NULL,
 PRIMARY KEY (product_id, category_id),
 FOREIGN KEY (product_id) REFERENCES products(id),
 FOREIGN KEY (category_id) REFERENCES categories(id)
-);`
+);
+```
 
 In this example, the `products` and `categories` tables represent the products and categories, respectively. The `product_categories` table represents the join table, and is used to store the relationship between products and categories. The foreign keys in the `product_categories` table ensure that a product can only be associated with a category if both the product and the category exist in the database.
 
@@ -149,7 +153,8 @@ In a Prisma model, the relationship between products and categories can be model
 
 Here's an example of how you can define the relationship between products and categories in a Prisma schema file:
 
-`type Product {
+```
+type Product {
 id: ID! @unique
 name: String!
 description: String
@@ -161,7 +166,8 @@ type Category {
 id: ID! @unique
 name: String!
 products: [Product!]! @relation(link: TABLE, name: "ProductCategories")
-}`
+}
+```
 
 In this example, the `Product` and `Category` types represent the products and categories, respectively. The `categories` field in the `Product` type and the `products` field in the `Category` type are used to define the many-to-many relationship between the two types. The `@relation` directive is used to specify the type of relationship, and the `link` and name arguments are used to specify the name of the join table.
 
@@ -201,16 +207,17 @@ These are just a few examples of the types of catalogs that exist. The specific 
 
 **Catalog Model**
 
-`class Catalog(models.Model):
-name = models.CharField(max_length=100)
-description = models.TextField()
-created_at = models.DateTimeField(auto_now_add=True)
-updated_at = models.DateTimeField(auto_now=True)
+```
+   class Catalog(models.Model):
+        name = models.CharField(max_length=100)
+        description = models.TextField()
+        created_at = models.DateTimeField(auto_now_add=True)
+        updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
 
-`
+```
 
 This model defines a `Catalog` object with the following fields:
 
@@ -226,14 +233,15 @@ Note: This is just a sample model, and can be modified and expanded as needed de
 
 Here is a sample **catalog model** in **Prisma**, a type-safe ORM for Node.js:
 
-`type Catalog {
+```
+type Catalog {
   id: ID!
   name: String!
   description: String!
   createdAt: DateTime!
   updatedAt: DateTime!
 }
-`
+```
 
 ### How to use a barcode in nestjs
 
@@ -243,16 +251,19 @@ Here's how you can use barcodes in a Nest.js application:
 
 2. Generate barcodes: Use the barcode package to generate barcodes for your products. For example, if you're using the `jsbarcode` package, you can use the following code to generate a barcode for a product:
 
-`import JsBarcode from 'jsbarcode';
+```
+import JsBarcode from 'jsbarcode';
 
 const barcode = JsBarcode('#barcode', 'your-product-sku');
-barcode.init();`
+barcode.init();
+```
 
 3. Display barcodes in the user interface: Use the generated barcodes in your user interface to display the barcodes for your products. You can display the barcodes as images, or use a barcode scanner to scan the barcodes and retrieve the product information.
 
 4. Read barcodes in your application: If you're using a barcode scanner in your application, you can use the barcode package to read the barcodes and retrieve the product information. For example, if you're using the `quaggaJS` package, you can use the following code to read a barcode:
 
-`import Quagga from 'quagga';
+```
+import Quagga from 'quagga';
 
 Quagga.init({
 inputStream: {
@@ -284,6 +295,7 @@ Quagga.start();
 
 Quagga.onDetected(function(result) {
 console.log(result.codeResult.code);
-});`
+});
+```
 
 Note: This is just a sample code to show you how to use barcodes in a Nest.js application. The specific implementation may vary depending on the barcode package you are using, and the specific requirements of your application
