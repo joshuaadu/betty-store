@@ -46,6 +46,7 @@
 - [Tremor: React Dashboard Components](https://www.tremor.so/)
 - [React Select](https://react-select.com/home)
 - [React Data Table Component](https://react-data-table-component.netlify.app/?path=/story/getting-started-intro--page)
+- [React Datepicker](https://reactdatepicker.com/)
 
 ## Authentication
 
