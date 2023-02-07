@@ -53,9 +53,11 @@
     "price",
     "quantity_on_hand"
   ]
-}`
+}
+```
 
-`type Product {
+```js
+type Product {
   id: ID!
   name: String!
   description: String
@@ -121,7 +123,7 @@ In a product catalog, the relationship between products and categories is typica
 
 Here's an example of how you can create a schema for products and categories using a join table in a relational database such as MySQL or PostgreSQL:
 
-```
+```sql
 CREATE TABLE products (
 id INT AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
@@ -153,7 +155,7 @@ In a Prisma model, the relationship between products and categories can be model
 
 Here's an example of how you can define the relationship between products and categories in a Prisma schema file:
 
-```json
+```js
 type Product {
 id: ID! @unique
 name: String!
