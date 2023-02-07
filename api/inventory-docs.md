@@ -268,35 +268,35 @@ barcode.init();
 import Quagga from 'quagga';
 
 Quagga.init({
-inputStream: {
-type : "LiveStream",
-constraints: {
-width: 640,
-height: 480,
-facingMode: "environment"
-}
-},
-locator: {
-patchSize: "medium",
-halfSample: true
-},
-numOfWorkers: 2,
-decoder: {
-readers: [
-"code_128_reader"
-]
-},
-locate: true
+    inputStream: {
+    type : "LiveStream",
+    constraints: {
+    width: 640,
+    height: 480,
+    facingMode: "environment"
+    }
+  },
+  locator: {
+      patchSize: "medium",
+      halfSample: true
+  },
+  numOfWorkers: 2,
+  decoder: {
+      readers: [
+      "code_128_reader"
+      ]
+  },
+  locate: true
 }, function(err) {
-if (err) {
-console.log(err);
-return
-}
-Quagga.start();
-});
+      if (err) {
+      console.log(err);
+      return
+      }
+      Quagga.start();
+      });
 
 Quagga.onDetected(function(result) {
-console.log(result.codeResult.code);
+    console.log(result.codeResult.code);
 });
 ```
 
