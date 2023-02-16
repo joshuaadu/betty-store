@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function DashboardIcon() {
+export default function SupplyChainIcon() {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
-			className="icon icon-tabler icon-tabler-dashboard"
+			className="icon icon-tabler icon-tabler-truck-delivery"
 			width={20}
 			height={20}
 			viewBox="0 0 24 24"
@@ -15,9 +15,10 @@ export default function DashboardIcon() {
 			strokeLinejoin="round"
 		>
 			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-			<circle cx="12" cy="13" r="2" />
-			<line x1="13.45" y1="11.55" x2="15.5" y2="9.5" />
-			<path d="M6.4 20a9 9 0 1 1 11.2 0z" />
+			<circle cx="7" cy="17" r="2" />
+			<circle cx="17" cy="17" r="2" />
+			<path d="M5 17h-2v-4m-1 -8h11v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+			<line x1="3" y1="9" x2="7" y2="9" />
 		</svg>
 	);
 }

@@ -28,4 +28,12 @@
 	.label-error {
 		@apply text-red-700 dark:text-red-500;
 	}
+
+	.link {
+		@apply flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6;
+	}
+
+	.active-link {
+		@apply flex w-full justify-between text-gray-300  hover:text-gray-500 cursor-pointer items-center mb-6;
+	}
 }
