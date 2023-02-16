@@ -1,10 +1,13 @@
 "use client";
 import React, { FormEvent, FormEventHandler } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Form() {
+	const router = useRouter();
 	const submitFormhandler = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		console.log("Submit form");
+		router.push("/dashboard");
 	};
 	return (
 		<form className="w-[90%]" onSubmit={submitFormhandler}>
@@ -15,8 +18,9 @@ export default function Form() {
 				<input
 					type="text"
 					id="username"
-					className="input input-ok"
+					className="input valid:input-ok invalid:input-error"
 					placeholder="Bonnie Green"
+					required
 				/>
 				{/* <p className="mt-2 text-sm text-green-600 dark:text-green-500">
             <span className="font-medium">Alright!</span> Username
@@ -30,8 +34,9 @@ export default function Form() {
 				<input
 					type="password"
 					id="password"
-					className="input input-error"
+					className="input valid:input-ok invalid:input-error"
 					placeholder=""
+					required
 				/>
 				{/* <p className="mt-2 text-sm input-error_message">
             <span className="font-medium">Oops!</span> Username already
