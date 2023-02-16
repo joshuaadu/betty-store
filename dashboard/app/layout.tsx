@@ -9,7 +9,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" className="h-full">
 			<head />
-			<body className="h-full overflow-hidden">{children}</body>
+			<body className="h-full overflow-hidden text-pblack">{children}</body>
 		</html>
 	);
 }
