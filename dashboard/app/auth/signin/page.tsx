@@ -1,3 +1,4 @@
+import NativeDialog from "../../../components/NativeDialog";
 import Form from "./Form";
 
 export default function LoginPage() {
@@ -25,6 +26,7 @@ export default function LoginPage() {
 					<Form />
 				</div>
 			</section>
+			
 		</main>
 	);
 }

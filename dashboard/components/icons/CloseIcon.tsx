@@ -9,7 +9,7 @@ export default function CloseIcon() {
 			height="20"
 			viewBox="0 0 24 24"
 			strokeWidth="1.5"
-			stroke="white"
+			stroke="currentColor"
 			fill="none"
 			strokeLinecap="round"
 			strokeLinejoin="round"
