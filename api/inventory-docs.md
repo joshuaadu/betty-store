@@ -4,7 +4,7 @@
 
 ### Schema
 
-```
+```json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Product",
@@ -53,9 +53,11 @@
     "price",
     "quantity_on_hand"
   ]
-}`
+}
+```
 
-`type Product {
+```js
+type Product {
   id: ID!
   name: String!
   description: String
@@ -121,7 +123,7 @@ In a product catalog, the relationship between products and categories is typica
 
 Here's an example of how you can create a schema for products and categories using a join table in a relational database such as MySQL or PostgreSQL:
 
-```
+```sql
 CREATE TABLE products (
 id INT AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255) NOT NULL,
@@ -153,7 +155,7 @@ In a Prisma model, the relationship between products and categories can be model
 
 Here's an example of how you can define the relationship between products and categories in a Prisma schema file:
 
-```
+```js
 type Product {
 id: ID! @unique
 name: String!
@@ -207,7 +209,7 @@ These are just a few examples of the types of catalogs that exist. The specific 
 
 **Catalog Model**
 
-```
+```python
    class Catalog(models.Model):
         name = models.CharField(max_length=100)
         description = models.TextField()
@@ -233,7 +235,7 @@ Note: This is just a sample model, and can be modified and expanded as needed de
 
 Here is a sample **catalog model** in **Prisma**, a type-safe ORM for Node.js:
 
-```
+```js
 type Catalog {
   id: ID!
   name: String!
@@ -251,7 +253,7 @@ Here's how you can use barcodes in a Nest.js application:
 
 2. Generate barcodes: Use the barcode package to generate barcodes for your products. For example, if you're using the `jsbarcode` package, you can use the following code to generate a barcode for a product:
 
-```
+```js
 import JsBarcode from 'jsbarcode';
 
 const barcode = JsBarcode('#barcode', 'your-product-sku');
@@ -262,39 +264,39 @@ barcode.init();
 
 4. Read barcodes in your application: If you're using a barcode scanner in your application, you can use the barcode package to read the barcodes and retrieve the product information. For example, if you're using the `quaggaJS` package, you can use the following code to read a barcode:
 
-```
+```js
 import Quagga from 'quagga';
 
 Quagga.init({
-inputStream: {
-type : "LiveStream",
-constraints: {
-width: 640,
-height: 480,
-facingMode: "environment"
-}
-},
-locator: {
-patchSize: "medium",
-halfSample: true
-},
-numOfWorkers: 2,
-decoder: {
-readers: [
-"code_128_reader"
-]
-},
-locate: true
+    inputStream: {
+    type : "LiveStream",
+    constraints: {
+    width: 640,
+    height: 480,
+    facingMode: "environment"
+    }
+  },
+  locator: {
+      patchSize: "medium",
+      halfSample: true
+  },
+  numOfWorkers: 2,
+  decoder: {
+      readers: [
+      "code_128_reader"
+      ]
+  },
+  locate: true
 }, function(err) {
-if (err) {
-console.log(err);
-return
-}
-Quagga.start();
-});
+      if (err) {
+      console.log(err);
+      return
+      }
+      Quagga.start();
+      });
 
 Quagga.onDetected(function(result) {
-console.log(result.codeResult.code);
+    console.log(result.codeResult.code);
 });
 ```
 

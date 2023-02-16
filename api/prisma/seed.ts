@@ -11,7 +11,7 @@ async function main() {
       address: 'accra',
       first_name: 'admin',
       last_name: 'admin',
-      telephone: 123456789,
+      telephone: "123456789",
       password: 'test',
     },
   });
