@@ -11,7 +11,7 @@ export const roboto_mono = Roboto_Mono({
 });
 
 export const lato = Lato({
+	weight: ["100", "300", "400", "700", "900"],
 	variable: "--font-lato",
 	display: "swap",
-	weight: [`100`, `300`, `400`, `700`, `900`],
 });

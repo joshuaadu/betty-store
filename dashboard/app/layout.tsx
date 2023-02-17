@@ -7,6 +7,7 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import "@tremor/react/dist/esm/tremor.css";
 import { inter, lato, roboto_mono } from "./fonts";
+import Providers from "./providers";
 
 export default function RootLayout({
 	children,
@@ -19,7 +20,9 @@ export default function RootLayout({
 			className={`h-full ${inter.variable} ${roboto_mono.variable} ${lato.variable}`}
 		>
 			<head />
-			<body className="h-full overflow-hidden text-pblack">{children}</body>
+			<body className="h-full overflow-hidden text-pblack">
+				<Providers>{children}</Providers>
+			</body>
 		</html>
 	);
 }

@@ -6,7 +6,9 @@ export default function Form() {
 	const router = useRouter();
 	const submitFormhandler = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		const response = fetch("/api/signin")
 		console.log("Submit form");
+
 		router.push("/dashboard");
 	};
 	return (
