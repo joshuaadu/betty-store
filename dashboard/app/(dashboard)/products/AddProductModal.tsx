@@ -1,9 +1,10 @@
 "use client";
-import React, { SyntheticEvent, useEffect, useRef, useState } from "react";
-import CloseIcon from "./icons/CloseIcon";
-import { Button } from "./UI/Button";
+import React, { SyntheticEvent, useRef } from "react";
+import CloseIcon from "../../../components/icons/CloseIcon";
+import PlusIcon from "../../../components/icons/PlusIcon";
+import { Button } from "../../../components/UI/Button";
 
-export default function NativeDialog() {
+export default function AddProductModal() {
 	const dialogRef = useRef<HTMLDialogElement>(null);
 
 	const openDialogHandler = (e: SyntheticEvent<HTMLButtonElement>) => {
@@ -26,7 +27,7 @@ export default function NativeDialog() {
 				className="h-screen p-8  md:w-2/3 mr-0 rounded-l-3xl backdrop:bg-gray-600 backdrop:bg-opacity-40 open:bg-white open:ring-2 open:ring-black/5 open:shadow-lg"
 			>
 				<div>
-					<h2>Title</h2>
+					<h2>Add new product</h2>
 					<button
 						onClick={closeDialogHandler}
 						className="absolute top-8 right-8 rounded-md  text-white stroke-[3px] border-gray-500 bg-gray-400 p-2"
@@ -57,8 +58,16 @@ export default function NativeDialog() {
 				</form>
 			</dialog>
 			<p>
-				<Button color="blue" id="showDialog" onClick={openDialogHandler}>
-					Show the dialog
+				<Button
+					color="blue"
+					id="showDialog"
+					onClick={openDialogHandler}
+					className="gap-3"
+				>
+					<span className="text-blue-600 bg-white rounded w-8 h-8 stroke-2">
+						<PlusIcon />
+					</span>
+					<span>NEW PRODUCT</span>
 				</Button>
 			</p>
 			<output></output>

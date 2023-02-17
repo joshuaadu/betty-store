@@ -12,7 +12,10 @@ export default function Form() {
 	return (
 		<form className="w-[90%]" onSubmit={submitFormhandler}>
 			<div className="mb-6">
-				<label htmlFor="username" className="label label-ok">
+				<label
+					htmlFor="username"
+					className="label valid:label-ok invalid:label-error "
+				>
 					Your username
 				</label>
 				<input
@@ -28,7 +31,10 @@ export default function Form() {
         </p> */}
 			</div>
 			<div>
-				<label htmlFor="password" className="label">
+				<label
+					htmlFor="password"
+					className="label valid:label-ok invalid:label-error"
+				>
 					Your password
 				</label>
 				<input
