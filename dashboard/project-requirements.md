@@ -34,6 +34,7 @@
 
 ## Styling & Component UI
 
+- [PRIMEREACT](https://primereact.org/) Complete UI Library: best of the best!
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Tailwind CheetSheet](https://nerdcave.com/tailwind-cheat-sheet)
 - [HyperUI](https://www.hyperui.dev/)
@@ -48,6 +49,9 @@
 - [React Data Table Component](https://react-data-table-component.netlify.app/?path=/story/getting-started-intro--page)
 - [React Datepicker](https://reactdatepicker.com/)
 - [react-date-range](https://hypeserver.github.io/react-date-range/)
+- [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels)
+- [react-easy-crop](https://github.com/ValentinH/react-easy-crop): A React component to crop images/videos with easy interactions
+- [Filepond](https://pqina.nl/filepond/): Upload anything, from anywhere
 
 ## Authentication
 
@@ -72,3 +76,5 @@ NB: Other resources:
 
 
 Reference: [React Application Architecture for Production](https://learning.oreilly.com/library/view/react-application-architecture/9781801070539/) by [Alan Alickovic](https://github.com/alan2207)
+
+Blog: [A summary of libraries that are commonly used with React](https://www.frontendundefined.com/posts/summaries/common-react-libraries/)
