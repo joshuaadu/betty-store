@@ -34,6 +34,7 @@
 
 ## Styling & Component UI
 
+- [PRIMEREACT](https://primereact.org/) Complete UI Library: best of the best!
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Tailwind CheetSheet](https://nerdcave.com/tailwind-cheat-sheet)
 - [HyperUI](https://www.hyperui.dev/)
@@ -48,6 +49,9 @@
 - [React Data Table Component](https://react-data-table-component.netlify.app/?path=/story/getting-started-intro--page)
 - [React Datepicker](https://reactdatepicker.com/)
 - [react-date-range](https://hypeserver.github.io/react-date-range/)
+- [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels)
+- [react-easy-crop](https://github.com/ValentinH/react-easy-crop): A React component to crop images/videos with easy interactions
+- [Filepond](https://pqina.nl/filepond/): Upload anything, from anywhere
 
 ## Authentication
 
@@ -70,5 +74,14 @@ NB: Other resources:
 - [Nextjs 13](https://beta.nextjs.org/docs)
 - [React TypeScript](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup)
 
+## Inspiration
+
+- [Commerce.js](https://commercejs.com/) [Dashboard](https://dashboard.chec.io/)
+- [Swell Ecommerce](https://www.swell.is/) [Developer API](https://developers.swell.is/)
+- [Salah Elimam's](https://dribbble.com/SalahElimam) [dribble](https://dribbble.com/) design collection. E.g, [Product page](https://dribbble.com/shots/14643825-Products-Cards)
+
+
 
 Reference: [React Application Architecture for Production](https://learning.oreilly.com/library/view/react-application-architecture/9781801070539/) by [Alan Alickovic](https://github.com/alan2207)
+
+Blog: [A summary of libraries that are commonly used with React](https://www.frontendundefined.com/posts/summaries/common-react-libraries/)
