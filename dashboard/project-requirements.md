@@ -74,6 +74,13 @@ NB: Other resources:
 - [Nextjs 13](https://beta.nextjs.org/docs)
 - [React TypeScript](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup)
 
+## Inspiration
+
+- [Commerce.js](https://commercejs.com/) [Dashboard](https://dashboard.chec.io/)
+- [Swell Ecommerce](https://www.swell.is/) [Developer API](https://developers.swell.is/)
+- [Salah Elimam's](https://dribbble.com/SalahElimam) [dribble](https://dribbble.com/) design collection. E.g, [Product page](https://dribbble.com/shots/14643825-Products-Cards)
+
+
 
 Reference: [React Application Architecture for Production](https://learning.oreilly.com/library/view/react-application-architecture/9781801070539/) by [Alan Alickovic](https://github.com/alan2207)
 
