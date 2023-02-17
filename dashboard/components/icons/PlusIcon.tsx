@@ -11,8 +11,8 @@ export default function PlusIcon() {
 			stroke-width="current"
 			stroke="currentColor"
 			fill="none"
-			stroke-linecap="round"
-			stroke-linejoin="round"
+			strokeLinecap="round"
+			strokeLinejoin="round"
 		>
 			<path stroke="none" d="M0 0h24v24H0z" fill="none" />
 			<line x1="12" y1="5" x2="12" y2="19" />
