@@ -1,9 +1,17 @@
 "use client";
 import React, { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Block, Card, ColGrid, Tab, TabList, Text, Title } from "@tremor/react";
+import { getData } from "../../../utils/fetchData";
 
-export default function TabViews() {
+export default function TabViews(props: any) {
 	const [selectedView, setSelectedView] = useState(1);
+	const { data } = useQuery({
+		queryKey: ["data"],
+		queryFn: getData,
+		initialData: props.posts,
+	});
+	console.log(data);
 
 	return (
 		<>
