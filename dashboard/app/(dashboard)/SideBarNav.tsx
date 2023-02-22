@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import CartIcon from "../../components/icons/CartIcon";
 import CategoriesIcon from "../../components/icons/CategoriesIcon";
@@ -29,11 +30,7 @@ export default function SideBarNav() {
 						text="Dashboard"
 					/>
 
-					<NavLink
-						href="/products"
-						icon={<ProductIcon />}
-						text="Products"
-					/>
+					<NavLink href="/products" icon={<ProductIcon />} text="Products" />
 
 					<NavLink
 						href="/inventory"
@@ -63,11 +60,7 @@ export default function SideBarNav() {
 						text="Suppliers"
 					/>
 
-					<NavLink
-						href="/settings"
-						icon={<SettingsIcon />}
-						text="Settings"
-					/>
+					<NavLink href="/settings" icon={<SettingsIcon />} text="Settings" />
 				</ul>
 			</div>
 		</div>

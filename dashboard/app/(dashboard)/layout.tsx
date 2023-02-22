@@ -1,14 +1,23 @@
-"use client";
 import { transcode } from "buffer";
 import { useState } from "react";
+import useAuthStore from "../../stores/useAuthStore";
+import { getData } from "../../utils/fetchData";
 import NavBar from "./NavBar";
 import SideBar from "./SideBar";
 
-export default function DashboardLayout({
+export default async function DashboardLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
+	console.log("Rendering Dashboard Layout");
+	// const initialData = await getData();
+	// useAuthStore.setState({ isAuthenticated: true, user: initialData });
+	const data = useAuthStore.getState().user;
+
+	// // console.log(initialData);
+	console.log("Dashboard Layout", data);
+
 	return (
 		<div className="w-full h-full bg-lgray overflow-hidden">
 			<div className="h-full flex flex-no-wrap">

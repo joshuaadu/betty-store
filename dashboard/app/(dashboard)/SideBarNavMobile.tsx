@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import CartIcon from "../../components/icons/CartIcon";
 import CategoriesIcon from "../../components/icons/CategoriesIcon";

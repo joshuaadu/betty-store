@@ -1,3 +1,4 @@
+import { defaultConfig } from "next/dist/server/config-shared";
 import { create } from "zustand";
 
 interface User {
@@ -16,3 +17,5 @@ const useAuthStore = create<AuthState>((set) => ({
 	setAuthenticated: (value) => set((state) => ({ isAuthenticated: value })),
 	setUser: (data) => set((state) => ({ user: data })),
 }));
+
+export default useAuthStore;
