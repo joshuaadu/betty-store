@@ -1,6 +1,5 @@
 import React from "react";
 
-
 // Light With Icons At Bottom Alternate Style
 function Index() {
 	return (
@@ -177,7 +176,7 @@ function Index() {
 						<div className="w-10 h-10 bg-cover rounded-md mr-3">
 							<img
 								src="https://tuk-cdn.s3.amazonaws.com/assets/components/avatars/a_5.png"
-								alt
+								alt=""
 								className="rounded-full h-full w-full overflow-hidden shadow"
 							/>
 						</div>
@@ -267,7 +266,7 @@ function Index() {
 			</div>
 			<div
 				className="text-gray-600 mr-8 visible sm:hidden relative"
-				onclick="dropdownHandler(this)"
+				// onClick="dropdownHandler(this)"
 			>
 				<ul className="p-y w-64 border-r bg-indigo-900 absolute rounded left-0 shadow mt-8 sm:mt-16 hidden">
 					<li className="flex w-full justify-between text-gray-600 hover:text-gray-300 hover:bg-indigo-800 cursor-pointer items-center py-3 px-2">
