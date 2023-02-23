@@ -15,7 +15,7 @@ export class AuthService {
     try {
       const password = await argon.hash(dto.password);
 
-      const user = this.prisma.user.create({
+      const user = await this.prisma.user.create({
         data: {
           username: dto.username,
           password,
@@ -26,7 +26,9 @@ export class AuthService {
         },
       });
 
-      delete (await user).password;
+      // easy but dirt solution. Use a transformer
+      delete user.password;
+
       return user;
     } catch (error) {
       if (error instanceof PrismaClientKnownRequestError) {
@@ -36,5 +38,27 @@ export class AuthService {
       }
       throw error;
     }
+  }
+
+  async signin(dto: AuthDto) {
+    const user = await this.prisma.user.findUnique({
+      where: {
+        username: dto.username,
+      },
+    });
+
+    if (!user) {
+      throw new ForbiddenException('Incorrect credentials!');
+    }
+
+    const matchPassword = await argon.verify(user.password, dto.password);
+    console.log('matched password:', matchPassword);
+
+    if (!matchPassword) {
+      throw new ForbiddenException('Incorrect credentials!');
+    }
+    delete (await user).password;
+
+    return user;
   }
 }

@@ -17,9 +17,9 @@ export class CreateUserDto {
   @IsString()
   last_name: string;
 
-  @IsMobilePhone()
+  @IsMobilePhone('en-GH')
   @IsNotEmpty()
-  telephone: number;
+  telephone: string;
 
   @IsNotEmpty()
   @IsString()
