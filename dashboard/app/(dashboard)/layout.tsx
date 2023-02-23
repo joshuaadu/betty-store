@@ -1,5 +1,6 @@
 import { transcode } from "buffer";
 import { useState } from "react";
+import StoreInitializer from "../../stores/initializers/StoreInitializer";
 import useAuthStore from "../../stores/useAuthStore";
 import { getData } from "../../utils/fetchData";
 import NavBar from "./NavBar";
@@ -22,6 +23,7 @@ export default async function DashboardLayout({
 		<div className="w-full h-full bg-lgray overflow-hidden">
 			<div className="h-full flex flex-no-wrap">
 				{/* Sidebar starts */}
+				<StoreInitializer user={data} />
 				<SideBar />
 				{/* Sidebar ends */}
 				{/* Remove class [ h-64 ] when adding a card block */}

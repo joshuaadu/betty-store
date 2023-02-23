@@ -7,6 +7,7 @@ import ArrowDownIcon from "../../components/icons/ArrowDownIcon";
 import UserIcon from "../../components/icons/UserIcon";
 import SignoutIcon from "../../components/icons/SignoutIcon";
 import HamburgerIcon from "../../components/icons/HamburgerIcon";
+import useAuthStore from "../../stores/useAuthStore";
 
 export default function NavBar() {
 	const [show, setShow] = useState(false);
@@ -55,7 +56,7 @@ export default function NavBar() {
 								</div>
 							</div>
 							<p className="hidden sm:block text-gray-800 text-sm mx-3">
-								Jane Doe
+								{useAuthStore.getState().user?.name}
 							</p>
 							<div className="cursor-pointer text-gray-600">
 								<ArrowDownIcon />

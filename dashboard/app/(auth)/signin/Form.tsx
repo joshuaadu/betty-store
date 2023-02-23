@@ -6,10 +6,40 @@ export default function Form() {
 	const router = useRouter();
 	const submitFormhandler = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		const response = fetch("/api/signin")
-		console.log("Submit form");
+		// console.log(e.target.elements);
+		const { username, password } = e.target.elements;
+		// const formData = new FormData();
+		// formData.append("username", username.value);
+		// formData.append("password", password.value);
+		const formData = {
+			username: username.value,
+			password: password.value,
+		};
+		console.log(formData);
 
-		router.push("/dashboard");
+		// console.log(formData);
+
+		try {
+			const response = await fetch("http://localhost:3003/auth/signin", {
+				method: "POST",
+				body: JSON.stringify({
+					username: username.value,
+					password: password.value,
+				}),
+				headers: {
+					"Content-Type": "application/json",
+				},
+			});
+
+			const data = await response.json();
+			console.log("Submit form", data);
+			console.log("Submit form", response);
+			if (response.ok) {
+				router.push("/dashboard");
+			}
+		} catch (error) {}
+
+		// router.push("/dashboard");
 	};
 	return (
 		<form className="w-[90%]" onSubmit={submitFormhandler}>

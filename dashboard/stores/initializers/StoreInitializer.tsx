@@ -3,11 +3,11 @@
 import { useRef } from "react";
 import useAuthStore from "../useAuthStore";
 
-function StoreInitializer({ name, price }: { name: string; price: number }) {
+function StoreInitializer({ user }: { user: any}) {
 	const initialized = useRef(false);
 
 	if (!initialized.current) {
-		// useAuthStore.setState({ name, price });
+		useAuthStore.setState({ user: user });
 		initialized.current = true;
 	}
 	return null;
