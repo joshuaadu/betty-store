@@ -89,6 +89,7 @@ This model defines a Product object with the following fields:
 
 Note: This is just a sample model, and can be modified and expanded as needed depending on the requirements of your inventory management system. You may want to add additional fields, such as an image field to store the product's image, or a field to associate the product with a specific catalog.
 
+
 ### SKU (Stock Keeping Unit)
 
 To add a SKU (Stock Keeping Unit) to your inventory management system, follow these steps:
@@ -106,6 +107,9 @@ To add a SKU (Stock Keeping Unit) to your inventory management system, follow th
 6. Update your inventory management system regularly to ensure that the information about each product, including its SKU, is accurate and up-to-date.
 
 Note: The specific steps and processes involved in adding a SKU to your inventory management system will vary depending on the system you are using. Refer to the documentation or support resources provided by your system for detailed instructions.
+
+See more: [What Is a SKU Number and How Can Retailers Use Them](https://www.shopify.com/retail/what-is-a-sku-number)
+
 
 ### What is the relationship between products and categories
 
