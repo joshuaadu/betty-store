@@ -1,6 +1,8 @@
 "use client";
 import React, { FormEvent, FormEventHandler } from "react";
 import { useRouter } from "next/navigation";
+import { postData } from "../../../utils/postData";
+import axios from "axios";
 
 export default function Form() {
 	const router = useRouter();
@@ -20,24 +22,27 @@ export default function Form() {
 		// console.log(formData);
 
 		try {
-			const response = await fetch("http://localhost:3003/auth/signin", {
-				method: "POST",
-				body: JSON.stringify({
+			const response = await axios.post(
+				"http://localhost:3003/auth/signin",
+				{
 					username: username.value,
 					password: password.value,
-				}),
-				headers: {
-					"Content-Type": "application/json",
 				},
-			});
+				{
+					headers: {
+						"Content-Type": "application/json",
+					},
+				}
+			);
 
-			const data = await response.json();
-			console.log("Submit form", data);
 			console.log("Submit form", response);
-			if (response.ok) {
+			// console.log("Submit form", response);
+			if (response.status === 200) {
 				router.push("/dashboard");
 			}
-		} catch (error) {}
+		} catch (error) {
+			console.log("error", error);
+		}
 
 		// router.push("/dashboard");
 	};

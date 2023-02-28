@@ -8,7 +8,7 @@ export default function PlusIcon() {
 			width="inherit"
 			height="inherit"
 			viewBox="0 0 24 24"
-			stroke-width="current"
+			strokeWidth="inherit"
 			stroke="currentColor"
 			fill="none"
 			strokeLinecap="round"
