@@ -1,5 +1,4 @@
-import { type NextPage, type GetServerSideProps } from "next";
-import { getServerAuthSession } from "../server/auth";
+import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
@@ -8,11 +7,8 @@ import { api } from "~/utils/api";
 
 import { Button } from "primereact/button";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 
 const Home: NextPage = () => {
-  const { data: sessionData } = useSession();
-
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
 
   return (
@@ -55,6 +51,7 @@ const Home: NextPage = () => {
             <p className="text-2xl text-white">
               {hello.data ? hello.data.greeting : "Loading tRPC query..."}
             </p>
+            <AuthShowcase />
           </div>
         </div>
       </main>
@@ -64,18 +61,35 @@ const Home: NextPage = () => {
 
 export default Home;
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const session = await getServerAuthSession(ctx);
+const AuthShowcase: React.FC = () => {
+  const { data: sessionData } = useSession();
 
-  if (!session) {
-    return {
-      redirect: {
-        destination: "/auth/signin",
-        permanent: false,
-      },
-    };
-  }
-  return {
-    props: { session },
-  };
+
+  const { data: secretMessage } = api.example.getSecretMessage.useQuery(
+    undefined, // no input
+    { enabled: sessionData?.user !== undefined }
+  );
+
+
+    return (
+      <div className="flex flex-col items-center justify-center gap-4">
+        <p className="text-center text-2xl text-white">
+          {sessionData && <span>Logged in as {sessionData.user?.name}</span>}
+          {secretMessage && <span> - {secretMessage}</span>}
+        </p>
+        <Button
+          className="rounded-full bg-white/10 px-10 py-3 text-[3rem] font-semibold text-white no-underline transition hover:bg-white/20"
+          onClick={sessionData ? () => void signOut() : () => void signIn()}
+        >
+          {sessionData ? "Sign out" : "Sign in"}
+        </Button>
+        <Button className="">
+          <img
+            alt="logo"
+            src="https://primefaces.org/cdn/primereact/images/primereact-logo-light.svg"
+            className="h-2rem"
+          ></img>
+        </Button>
+      </div>
+    );
 };

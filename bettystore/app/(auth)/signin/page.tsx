@@ -1,5 +1,4 @@
-import NativeDialog from "../../../components/NativeDialog";
-import Form from "./Form";
+import Form from "../../../src/components/forms/SigninForm";
 
 export default function LoginPage() {
 	return (
