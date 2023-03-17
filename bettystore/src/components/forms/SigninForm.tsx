@@ -100,7 +100,7 @@ export default function SignInForm() {
           className="p-button min-h-min text-sm"
           // size="large"
           onClick={() =>
-            void signIn("github", { callbackUrl: "http://localhost:3000" })
+            void signIn("github", { callbackUrl: "/" })
           }
           label="Sign in with GitHub"
           raised
