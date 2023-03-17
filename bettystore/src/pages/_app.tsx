@@ -1,6 +1,6 @@
 import type { ReactElement, ReactNode } from "react";
 import type { NextPage } from "next";
-import { type AppType, AppProps } from "next/app";
+import { type AppProps } from "next/app";
 import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 
@@ -15,7 +15,7 @@ import "primereact/resources/primereact.min.css";
 //icons
 import "primeicons/primeicons.css";
 
-export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+export type NextPageWithLayout<P, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
 
@@ -29,7 +29,7 @@ function MyApp({
   Component,
   pageProps,
 }: AppPropsWithLayout<{ session: Session }>) {
-  const getLayout = Component.getLayout || ((page: any) => page);
+  const getLayout = Component.getLayout || ((page) => page);
   return (
     <SessionProvider session={pageProps.session}>
       {getLayout(

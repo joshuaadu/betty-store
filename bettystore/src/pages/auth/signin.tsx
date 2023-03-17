@@ -1,5 +1,5 @@
 import React from "react";
-import { type NextPage, type GetServerSideProps } from "next";
+import { type GetServerSideProps } from "next";
 import { getServerAuthSession } from "../../server/auth";
 
 import SignInForm from "~/components/forms/SigninForm";

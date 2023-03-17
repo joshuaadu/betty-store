@@ -1,16 +1,13 @@
 "use client";
-import React, { FormEvent, FormEventHandler } from "react";
-import { useRouter } from "next/navigation";
-import axios from "axios";
+import React from "react";
 import { signIn, useSession } from "next-auth/react";
 import { Button } from "primereact/button";
 
 export default function SignInForm() {
-  const { data: sessionData, status } = useSession();
+  const { status } = useSession();
   console.log("status", status);
-  const router = useRouter();
-  const submitFormhandler = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const submitFormhandler = () => {
+    // e.preventDefault();
     // console.log(e.target.elements);
     // const { username, password } = e.target.elements;
     // const formData = new FormData();
@@ -21,9 +18,7 @@ export default function SignInForm() {
     //   password: password.value,
     // };
     // console.log(formData);
-
     // console.log(formData);
-
     // try {
     //   const response = await axios.post(
     //     "http://localhost:3003/auth/signin",
@@ -37,7 +32,6 @@ export default function SignInForm() {
     //       },
     //     }
     //   );
-
     //   console.log("Submit form", response);
     //   // console.log("Submit form", response);
     //   if (response.status === 200) {
@@ -46,7 +40,6 @@ export default function SignInForm() {
     // } catch (error) {
     //   console.log("error", error);
     // }
-
     // router.push("/dashboard");
   };
   return (

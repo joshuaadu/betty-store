@@ -2,16 +2,15 @@ import { type NextPage, type GetServerSideProps } from "next";
 import { getServerAuthSession } from "../server/auth";
 import Head from "next/head";
 import Link from "next/link";
-import { signIn, signOut, useSession } from "next-auth/react";
+import {
+  signOut,
+  // useSession
+} from "next-auth/react";
 
 import { api } from "~/utils/api";
 
-import { Button } from "primereact/button";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
-
 const Home: NextPage = () => {
-  const { data: sessionData } = useSession();
+  // const { data: sessionData } = useSession();
 
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
 
