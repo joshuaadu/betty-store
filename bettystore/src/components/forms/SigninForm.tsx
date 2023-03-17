@@ -12,40 +12,40 @@ export default function SignInForm() {
   const submitFormhandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // console.log(e.target.elements);
-    const { username, password } = e.target.elements;
+    // const { username, password } = e.target.elements;
     // const formData = new FormData();
     // formData.append("username", username.value);
     // formData.append("password", password.value);
-    const formData = {
-      username: username.value,
-      password: password.value,
-    };
-    console.log(formData);
+    // const formData = {
+    //   username: username.value,
+    //   password: password.value,
+    // };
+    // console.log(formData);
 
     // console.log(formData);
 
-    try {
-      const response = await axios.post(
-        "http://localhost:3003/auth/signin",
-        {
-          username: username.value,
-          password: password.value,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+    // try {
+    //   const response = await axios.post(
+    //     "http://localhost:3003/auth/signin",
+    //     {
+    //       username: username.value,
+    //       password: password.value,
+    //     },
+    //     {
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //     }
+    //   );
 
-      console.log("Submit form", response);
-      // console.log("Submit form", response);
-      if (response.status === 200) {
-        router.push("/dashboard");
-      }
-    } catch (error) {
-      console.log("error", error);
-    }
+    //   console.log("Submit form", response);
+    //   // console.log("Submit form", response);
+    //   if (response.status === 200) {
+    //     router.push("/dashboard");
+    //   }
+    // } catch (error) {
+    //   console.log("error", error);
+    // }
 
     // router.push("/dashboard");
   };
@@ -99,9 +99,7 @@ export default function SignInForm() {
         <Button
           className="p-button min-h-min text-sm"
           // size="large"
-          onClick={() =>
-            void signIn("github", { callbackUrl: "/" })
-          }
+          onClick={() => void signIn("github", { callbackUrl: "/" })}
           label="Sign in with GitHub"
           raised
           severity="secondary"
