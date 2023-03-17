@@ -1,4 +1,7 @@
 import React from "react";
+import { type NextPage, type GetServerSideProps } from "next";
+import { getServerAuthSession } from "../../server/auth";
+
 import SignInForm from "~/components/forms/SigninForm";
 
 export default function SignInPage() {
@@ -29,3 +32,19 @@ export default function SignInPage() {
     </main>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const session = await getServerAuthSession(ctx);
+
+  if (session) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
+  return {
+    props: { session },
+  };
+};

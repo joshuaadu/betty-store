@@ -8,7 +8,8 @@ import { api } from "~/utils/api";
 
 import "~/styles/globals.css";
 //theme
-import "primereact/resources/themes/lara-light-indigo/theme.css";
+// import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primereact/resources/themes/tailwind-light/theme.css";
 //core
 import "primereact/resources/primereact.min.css";
 //icons

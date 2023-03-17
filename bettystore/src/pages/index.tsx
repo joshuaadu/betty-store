@@ -55,6 +55,12 @@ const Home: NextPage = () => {
             <p className="text-2xl text-white">
               {hello.data ? hello.data.greeting : "Loading tRPC query..."}
             </p>
+            <button
+              className=" rounded-full bg-white/10 p-4 text-2xl font-semibold text-white no-underline transition hover:bg-white/20"
+              onClick={() => void signOut()}
+            >
+              Sign out
+            </button>
           </div>
         </div>
       </main>

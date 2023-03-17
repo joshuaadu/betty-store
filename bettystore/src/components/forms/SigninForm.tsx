@@ -6,8 +6,8 @@ import { signIn, useSession } from "next-auth/react";
 import { Button } from "primereact/button";
 
 export default function SignInForm() {
-  const { data: sessionData } = useSession();
-
+  const { data: sessionData, status } = useSession();
+  console.log("status", status);
   const router = useRouter();
   const submitFormhandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -97,14 +97,16 @@ export default function SignInForm() {
           Sign In
         </button>
         <Button
-          className="p-button min-h-min"
-          //   size="large"
-          onClick={() => void signIn()}
+          className="p-button min-h-min text-sm"
+          // size="large"
+          onClick={() =>
+            void signIn("github", { callbackUrl: "http://localhost:3000" })
+          }
           label="Sign in with GitHub"
           raised
           severity="secondary"
-          badge="2"
         />
+        {status === "loading" && <p>Loading...</p>}
       </div>
     </form>
   );
