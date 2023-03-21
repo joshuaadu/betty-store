@@ -5,9 +5,14 @@ import {
   type DefaultSession,
 } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
+import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import argon2 from "argon2";
+
 import { env } from "~/env.mjs";
 import { prisma } from "~/server/db";
+import { CredentialUser } from "@prisma/client";
+import { setEngine } from "crypto";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -19,8 +24,10 @@ declare module "next-auth" {
   interface Session extends DefaultSession {
     user: {
       id: string;
+      name?: string | null;
+      email?: string | null;
       // ...other properties
-      // role: UserRole;
+      role?: "SUPER" | "ADMIN" | "USER";
     } & DefaultSession["user"];
   }
 
@@ -51,6 +58,43 @@ export const authOptions: NextAuthOptions = {
       clientId: env.GITHUB_CLIENT_ID,
       clientSecret: env.GITHUB_CLIENT_SECRET,
     }),
+    CredentialsProvider({
+      // The name to display on the sign in form (e.g. "Sign in with...")
+      name: "Credentials",
+      // `credentials` is used to generate a form on the sign in page.
+      // You can specify which fields should be submitted, by adding keys to the `credentials` object.
+      // e.g. domain, username, password, 2FA token, etc.
+      // You can pass any HTML attribute to the <input> tag through the object.
+      credentials: {
+        username: { label: "Username", type: "text", placeholder: "jsmith" },
+        email: { label: "Email", type: "text", placeholder: "" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials, req) {
+        // Add logic here to look up the user from the credentials supplied
+        const user = await prisma.credentialUser.findUnique({
+          where: {
+            email: credentials?.email,
+          },
+        });
+
+        if (!user) {
+          // throw new Error("Invalid email or password");
+          return null;
+        }
+
+        const isValidPassword = await argon2.verify(
+          user.password,
+          credentials?.password as string
+        );
+        if (!isValidPassword) {
+          // throw new Error("Invalid email or password");
+          return null;
+        }
+
+        return user;
+      },
+    }),
     /**
      * ...add more providers here.
      *
@@ -61,6 +105,30 @@ export const authOptions: NextAuthOptions = {
      * @see https://next-auth.js.org/providers/github
      */
   ],
+  secret: env.NEXTAUTH_SECRET,
+  session: {
+    strategy: "jwt",
+  },
+  
+  callbacks: {
+    async jwt({ token, user, account }) {
+      // Persist the OAuth access_token and or the user id to the token right after signin
+      if (user) {
+        token.user = user;
+      }
+      return Promise.resolve(token);
+    },
+
+    session: async ({ session, token }) => {
+      // session callback is called whenever a session for that particular user is checked
+      // in above function we created token.user=user
+
+      session.user = token.user as CredentialUser;
+      console.log(session.user);
+      // you might return this in new version
+      return Promise.resolve(session);
+    },
+  },
 };
 
 /**

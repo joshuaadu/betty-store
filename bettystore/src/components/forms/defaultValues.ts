@@ -1,5 +1,5 @@
 export const registerInputs = {
-  username: "",
+  name: "",
   email: "",
   password: "",
   confirm_password: "",

@@ -7,8 +7,13 @@ import { registerInputs } from "./defaultValues";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema, registerType } from "./validation-schema";
 
+import { api } from "~/utils/api";
+import { useRouter } from "next/router";
+
 export default function RegisterForm() {
   const { status } = useSession();
+  const registerUser = api.credential.create.useMutation();
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -21,6 +26,10 @@ export default function RegisterForm() {
   console.log("status", status);
   const submitFormhandler = (data: typeof registerInputs) => {
     console.log(data);
+    try {
+      registerUser.mutate(data);
+      router.push("/auth/signin");
+    } catch (error) {}
   };
   return (
     <form className="w-[90%]" onSubmit={handleSubmit(submitFormhandler)}>
@@ -35,12 +44,12 @@ export default function RegisterForm() {
           type="text"
           className="input valid:input-ok invalid:input-error"
           placeholder="Bonnie Green"
-          {...register("username", { required: true })}
+          {...register("name", { required: true })}
         />
-        {errors.username && (
+        {errors.name && (
           <p className="mt-2 text-xs italic text-red-500">
             {" "}
-            {errors.username?.message}
+            {errors.name?.message}
           </p>
         )}
         {/* <p className="mt-2 text-sm text-green-600 dark:text-green-500">
@@ -125,16 +134,16 @@ export default function RegisterForm() {
           className=" w-full transform rounded-md  bg-gray-700 px-4 py-3 text-sm font-medium uppercase tracking-wider text-gray-100 transition-colors duration-300 hover:bg-gray-600 focus:bg-gray-600 focus:outline-none md:w-max"
           type="submit"
         >
-          Sign In
+          Register
         </button>
-        <Button
+        {/* <Button
           className="p-button min-h-min text-sm"
           // size="large"
           onClick={() => void signIn("github", { callbackUrl: "/" })}
           label="Sign in with GitHub"
           raised
           severity="secondary"
-        />
+        /> */}
         {status === "loading" && <p>Loading...</p>}
       </div>
     </form>

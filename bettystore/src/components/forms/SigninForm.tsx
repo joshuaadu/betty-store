@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { registerInputs, signinInputs } from "./defaultValues";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema, signinSchema } from "./validation-schema";
+import { useRouter } from "next/router";
 
 export default function SignInForm() {
   const { status } = useSession();
@@ -13,14 +14,23 @@ export default function SignInForm() {
     register,
     handleSubmit,
     formState: { errors },
+    // watch,
   } = useForm({
     defaultValues: signinInputs,
     resolver: zodResolver(signinSchema),
   });
-  console.log(errors);
+  const router = useRouter();
+  console.log("watch", "\n", "errors", errors);
   console.log("status", status);
-  const submitFormhandler = (data: typeof signinInputs) => {
+  const submitFormhandler = async (data: typeof signinInputs) => {
     console.log(data);
+    try {
+      const result = await signIn("credentials", data);
+      router.push("/");
+    } catch (error: any) {
+      // show error toast message
+      console.log(error);
+    }
   };
   console.log("status", status);
 
@@ -37,7 +47,7 @@ export default function SignInForm() {
           type="text"
           id="email"
           className="input valid:input-ok invalid:input-error"
-          placeholder="Bonnie Green"
+          placeholder=""
           {...register("email", { required: true })}
         />
         {errors.email && (
@@ -63,7 +73,7 @@ export default function SignInForm() {
           id="password"
           className="input valid:input-ok invalid:input-error"
           placeholder=""
-          {...register("email", { required: true })}
+          {...register("password", { required: true })}
         />
         {errors.password && (
           <p className="mt-2 text-xs italic text-red-500">
