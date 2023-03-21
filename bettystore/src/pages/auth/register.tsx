@@ -3,8 +3,9 @@ import { type GetServerSideProps } from "next";
 import { getServerAuthSession } from "../../server/auth";
 
 import SignInForm from "~/components/forms/SigninForm";
+import RegisterForm from "~/components/forms/RegisterForm";
 
-export default function SignInPage() {
+export default function RegisterPage() {
   return (
     <main className="flex h-full w-full flex-1 items-center justify-center font-sans">
       <section className="mx-auto flex max-w-4xl flex-col overflow-hidden rounded-lg bg-white shadow-lg dark:bg-gray-800 md:h-max md:flex-row">
@@ -26,7 +27,7 @@ export default function SignInPage() {
         </div>
 
         <div className="text- flex items-center justify-center pb-6 md:w-1/2 md:py-6">
-          <SignInForm />
+          <RegisterForm />
         </div>
       </section>
     </main>

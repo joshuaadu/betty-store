@@ -3,41 +3,62 @@ import React from "react";
 import { signIn, useSession } from "next-auth/react";
 import { Button } from "primereact/button";
 import { useForm } from "react-hook-form";
-import { registerInputs, signinInputs } from "./defaultValues";
+import { registerInputs } from "./defaultValues";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { registerSchema, signinSchema } from "./validation-schema";
+import { registerSchema, registerType } from "./validation-schema";
 
-export default function SignInForm() {
+export default function RegisterForm() {
   const { status } = useSession();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    defaultValues: signinInputs,
-    resolver: zodResolver(signinSchema),
+    defaultValues: registerInputs,
+    resolver: zodResolver(registerSchema),
   });
   console.log(errors);
   console.log("status", status);
-  const submitFormhandler = (data: typeof signinInputs) => {
+  const submitFormhandler = (data: typeof registerInputs) => {
     console.log(data);
   };
-  console.log("status", status);
-
   return (
     <form className="w-[90%]" onSubmit={handleSubmit(submitFormhandler)}>
       <div className="mb-6">
         <label
-          htmlFor="email"
+          htmlFor="username"
+          className="label valid:label-ok invalid:label-error "
+        >
+          Your username
+        </label>
+        <input
+          type="text"
+          className="input valid:input-ok invalid:input-error"
+          placeholder="Bonnie Green"
+          {...register("username", { required: true })}
+        />
+        {errors.username && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.username?.message}
+          </p>
+        )}
+        {/* <p className="mt-2 text-sm text-green-600 dark:text-green-500">
+            <span className="font-medium">Alright!</span> Username
+            available!
+        </p> */}
+      </div>
+      <div className="mb-6">
+        <label
+          htmlFor="username"
           className="label valid:label-ok invalid:label-error "
         >
           Your email
         </label>
         <input
           type="text"
-          id="email"
           className="input valid:input-ok invalid:input-error"
-          placeholder="Bonnie Green"
+          placeholder=""
           {...register("email", { required: true })}
         />
         {errors.email && (
@@ -51,7 +72,7 @@ export default function SignInForm() {
             available!
         </p> */}
       </div>
-      <div>
+      <div className="mb-6">
         <label
           htmlFor="password"
           className="label valid:label-ok invalid:label-error"
@@ -60,15 +81,38 @@ export default function SignInForm() {
         </label>
         <input
           type="password"
-          id="password"
           className="input valid:input-ok invalid:input-error"
           placeholder=""
-          {...register("email", { required: true })}
+          {...register("password", { required: true })}
         />
         {errors.password && (
           <p className="mt-2 text-xs italic text-red-500">
             {" "}
             {errors.password?.message}
+          </p>
+        )}
+        {/* <p className="mt-2 text-sm input-error_message">
+            <span className="font-medium">Oops!</span> Username already
+            taken!
+        </p> */}
+      </div>
+      <div className="mb-6">
+        <label
+          htmlFor="confirm_password"
+          className="label valid:label-ok invalid:label-error"
+        >
+          Confirm your password
+        </label>
+        <input
+          type="password"
+          className="input valid:input-ok invalid:input-error"
+          placeholder=""
+          {...register("confirm_password", { required: true })}
+        />
+        {errors.confirm_password && (
+          <p className="mt-2 text-xs italic text-red-500">
+            {" "}
+            {errors.confirm_password?.message}
           </p>
         )}
         {/* <p className="mt-2 text-sm input-error_message">
