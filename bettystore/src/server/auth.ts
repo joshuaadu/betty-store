@@ -109,7 +109,9 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
-  
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   callbacks: {
     async jwt({ token, user, account }) {
       // Persist the OAuth access_token and or the user id to the token right after signin
