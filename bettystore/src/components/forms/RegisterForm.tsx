@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import { signIn, useSession } from "next-auth/react";
-import { Button } from "primereact/button";
+import { useSession } from "next-auth/react";
+// import { Button } from "primereact/button";
 import { useForm } from "react-hook-form";
 import { registerInputs } from "./defaultValues";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { registerSchema, registerType } from "./validation-schema";
+import { registerSchema } from "./validation-schema";
 
 import { api } from "~/utils/api";
 import { useRouter } from "next/router";
@@ -29,7 +29,9 @@ export default function RegisterForm() {
     try {
       registerUser.mutate(data);
       router.push("/auth/signin");
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <form className="w-[90%]" onSubmit={handleSubmit(submitFormhandler)}>
