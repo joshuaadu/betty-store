@@ -2,8 +2,6 @@ import React from "react";
 import { type GetServerSideProps } from "next";
 import { getServerAuthSession } from "../../server/auth";
 
-
-import SignInForm from "~/components/forms/SigninForm";
 import RegisterForm from "~/components/forms/RegisterForm";
 
 export default function RegisterPage() {

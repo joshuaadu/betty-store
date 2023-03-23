@@ -28,7 +28,7 @@ export default function RegisterForm() {
     console.log(data);
     try {
       registerUser.mutate(data);
-      router.push("/auth/signin");
+      void router.push("/auth/signin");
     } catch (error) {
       console.log(error);
     }

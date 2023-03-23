@@ -26,7 +26,9 @@ export default function SignInForm() {
     console.log(data);
     try {
       const result = await signIn("credentials", data);
-      router.push("/");
+      if (result?.error) {
+        console.log("sigin in error", result?.error);
+      }
     } catch (error: any) {
       // show error toast message
       console.log(error);
@@ -96,7 +98,7 @@ export default function SignInForm() {
         <Button
           className="p-button min-h-min text-sm"
           // size="large"
-          onClick={() => void signIn("github", { callbackUrl: "/" })}
+          onClick={() => void signIn("github")}
           label="Sign in with GitHub"
           raised
           severity="secondary"

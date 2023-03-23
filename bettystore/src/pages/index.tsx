@@ -2,15 +2,12 @@ import { type NextPage, type GetServerSideProps } from "next";
 import { getServerAuthSession } from "../server/auth";
 import Head from "next/head";
 import Link from "next/link";
-import {
-  signOut,
-  // useSession
-} from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 import { api } from "~/utils/api";
 
-const Home: NextPage = (props: any) => {
-  // const { data: sessionData } = useSession();
+const Home: NextPage = () => {
+  const { data: sessionData } = useSession();
 
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
 
@@ -54,7 +51,7 @@ const Home: NextPage = (props: any) => {
             <p className="text-2xl text-white">
               {hello.data ? hello.data.greeting : "Loading tRPC query..."}
             </p>
-            <p>{JSON.stringify(props?.session)}</p>
+            <p className="text-white">Username: {sessionData?.user.name}</p>
             <button
               className=" rounded-full bg-white/10 p-4 text-2xl font-semibold text-white no-underline transition hover:bg-white/20"
               onClick={() => void signOut()}
