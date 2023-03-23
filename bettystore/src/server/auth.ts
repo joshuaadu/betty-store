@@ -13,6 +13,7 @@ import { env } from "~/env.mjs";
 import { prisma } from "~/server/db";
 import { CredentialUser } from "@prisma/client";
 import { setEngine } from "crypto";
+import { filterUserForClient } from "~/utils/filters";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -26,6 +27,8 @@ declare module "next-auth" {
       id: string;
       name?: string | null;
       email?: string | null;
+      image: string | null;
+
       // ...other properties
       role?: "SUPER" | "ADMIN" | "USER";
     } & DefaultSession["user"];
@@ -99,7 +102,10 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
 
-        return user;
+        const clientUser = filterUserForClient(user);
+        console.log("transformed user details for client:", clientUser);
+
+        return clientUser;
       },
     }),
     /**
@@ -133,7 +139,7 @@ export const authOptions: NextAuthOptions = {
       // in above function we created token.user=user
 
       session.user = token.user as CredentialUser;
-      console.log(session.user);
+      // console.log(session.user);
       // you might return this in new version
       return Promise.resolve(session);
     },
