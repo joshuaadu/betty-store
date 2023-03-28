@@ -5,6 +5,7 @@ import {
   createTRPCRouter,
   publicProcedure,
   protectedProcedure,
+  protectedSuperAdminProcedure,
 } from "~/server/api/trpc";
 
 export const credentialUserRouter = createTRPCRouter({
@@ -49,6 +50,35 @@ export const credentialUserRouter = createTRPCRouter({
       if (!isValidPassword) {
         throw new Error("Invalid email or password");
       }
+      return user;
+    }),
+
+  getAll: protectedSuperAdminProcedure.query(async ({ input, ctx }) => {
+    const users = await ctx.prisma.credentialUser.findMany({
+      where: {
+        role: {
+          not: "SUPER",
+        },
+      },
+    });
+    if (!users) {
+      throw new Error("No user registered!");
+    }
+
+    return users;
+  }),
+
+  changeRole: protectedSuperAdminProcedure
+    .input(z.object({ user_id: z.string(), role: z.enum(["USER", "ADMIN"]) }))
+    .mutation(async ({ input, ctx }) => {
+      const user = await ctx.prisma.credentialUser.update({
+        where: { id: input.user_id },
+        data: { role: input.role },
+      });
+      if (!user) {
+        throw new Error("User Not Found!");
+      }
+
       return user;
     }),
 });

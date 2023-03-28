@@ -10,6 +10,7 @@ const Home: NextPage = () => {
   const { data: sessionData } = useSession();
 
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const users = api.credential.getAll.useQuery();
 
   return (
     <>
@@ -52,6 +53,7 @@ const Home: NextPage = () => {
               {hello.data ? hello.data.greeting : "Loading tRPC query..."}
             </p>
             <p className="text-white">Username: {sessionData?.user.name}</p>
+            <p className="text-white">Users: {JSON.stringify(users?.data)}</p>
             <button
               className=" rounded-full bg-white/10 p-4 text-2xl font-semibold text-white no-underline transition hover:bg-white/20"
               onClick={() => void signOut()}
