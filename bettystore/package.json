@@ -7,7 +7,10 @@
     "dev": "next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "db:dev-start": "sudo supabase start --ignore-health-check",
+    "db:dev-stop": "sudo supabase stop",
+    "db:dev-stopb": "sudo supabase stop --backup"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.0.0",
