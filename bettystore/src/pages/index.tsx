@@ -11,6 +11,7 @@ const Home: NextPage = () => {
 
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
   const users = api.credential.getAll.useQuery();
+  const { mutate } = api.credential.changeRole.useMutation();
 
   return (
     <>
@@ -59,6 +60,16 @@ const Home: NextPage = () => {
               onClick={() => void signOut()}
             >
               Sign out
+            </button>
+            <button
+              className=" rounded-full bg-white/10 p-4 text-2xl font-semibold text-white no-underline transition hover:bg-white/20"
+              onClick={() => {
+                if (users?.data && users?.data[0]) {
+                  mutate({ role: "ADMIN", user_id: users.data[0]?.id });
+                }
+              }}
+            >
+              Change user role
             </button>
           </div>
         </div>
