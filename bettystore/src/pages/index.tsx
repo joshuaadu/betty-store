@@ -5,6 +5,7 @@ import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
 
 import { api } from "~/utils/api";
+import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
   const { data: sessionData } = useSession();
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
   const users = api.credential.getAll.useQuery();
   const { mutate } = api.credential.changeRole.useMutation();
+  // const router = useRouter()
 
   return (
     <>
@@ -70,6 +72,12 @@ const Home: NextPage = () => {
               }}
             >
               Change user role
+            </button>
+            <button
+              className=" rounded-full bg-white/10 p-4 text-2xl font-semibold text-white no-underline transition hover:bg-white/20"
+              // onClick={() => {}}
+            >
+              <Link href="/dashboard"> Dashboard</Link>
             </button>
           </div>
         </div>
