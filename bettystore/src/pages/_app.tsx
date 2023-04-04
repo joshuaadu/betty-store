@@ -32,7 +32,6 @@ function MyApp({
   const getLayout = Component.getLayout || ((page) => page);
 
   useEffect(() => {
-    //@ts-ignore
     import("preline");
   }, []);
 
