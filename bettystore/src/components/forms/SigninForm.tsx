@@ -37,74 +37,123 @@ export default function SignInForm() {
   console.log("status", status);
 
   return (
-    <form className="w-[90%]" onSubmit={handleSubmit(submitFormhandler)}>
-      <div className="mb-6">
-        <label
-          htmlFor="email"
-          className="label valid:label-ok invalid:label-error "
-        >
-          Your email
-        </label>
-        <input
-          type="text"
-          id="email"
-          className="input valid:input-ok invalid:input-error"
-          placeholder=""
-          {...register("email", { required: true })}
-        />
-        {errors.email && (
-          <p className="mt-2 text-xs italic text-red-500">
-            {" "}
-            {errors.email?.message}
-          </p>
-        )}
-        {/* <p className="mt-2 text-sm text-green-600 dark:text-green-500">
-            <span className="font-medium">Alright!</span> Username
-            available!
-        </p> */}
-      </div>
-      <div>
-        <label
-          htmlFor="password"
-          className="label valid:label-ok invalid:label-error"
-        >
-          Your password
-        </label>
-        <input
-          type="password"
-          id="password"
-          className="input valid:input-ok invalid:input-error"
-          placeholder=""
-          {...register("password", { required: true })}
-        />
-        {errors.password && (
-          <p className="mt-2 text-xs italic text-red-500">
-            {" "}
-            {errors.password?.message}
-          </p>
-        )}
-        {/* <p className="mt-2 text-sm input-error_message">
-            <span className="font-medium">Oops!</span> Username already
-            taken!
-        </p> */}
-      </div>
-      <div className="mt-6 flex items-center justify-between gap-2">
+    // {/* <!-- Form --> */}
+    <form onSubmit={handleSubmit(submitFormhandler)}>
+      <div className="grid gap-y-4">
+        {/* <!-- Form Group --> */}
+        <div>
+          <label htmlFor="email" className="mb-2 block text-sm dark:text-white">
+            Email address
+          </label>
+          <div className="relative">
+            <input
+              type="email"
+              id="email"
+              className="block w-full rounded-md border  px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400"
+              aria-describedby="email-error"
+              {...register("email", { required: true })}
+            />
+            <div
+              className={`pointer-events-none absolute inset-y-0 right-0 flex ${
+                !errors.email ? "hidden" : ""
+              } items-center pr-3`}
+            >
+              <svg
+                className="h-5 w-5 text-red-500"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+                aria-hidden="true"
+              >
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+              </svg>
+            </div>
+            {errors.email && (
+              <p className="mt-2  text-xs text-red-600" id="email-error">
+                {errors.email?.message}
+              </p>
+            )}
+          </div>
+        </div>
+        {/* <!-- End Form Group --> */}
+
+        {/* <!-- Form Group --> */}
+        <div>
+          <div className="flex items-center justify-between">
+            <label
+              htmlFor="password"
+              className="mb-2 block text-sm dark:text-white"
+            >
+              Password
+            </label>
+            <a
+              className="text-sm font-medium text-blue-600 decoration-2 hover:underline"
+              href="../examples/html/recover-account.html"
+            >
+              Forgot password?
+            </a>
+          </div>
+          <div className="relative">
+            <input
+              type="password"
+              id="password"
+              className="block w-full rounded-md border px-4 py-3 text-sm focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400"
+              aria-describedby="password-error"
+              {...register("password", { required: true })}
+            />
+            <div
+              className={`pointer-events-none absolute inset-y-0 right-0 flex ${
+                !errors.password ? "hidden" : ""
+              } items-center pr-3`}
+            >
+              <svg
+                className="h-5 w-5 text-red-500"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+                aria-hidden="true"
+              >
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+              </svg>
+            </div>
+          </div>
+          {errors.password && (
+            <p className="mt-2 text-xs text-red-600" id="password-error">
+              {" "}
+              {errors.password?.message}
+            </p>
+          )}
+        </div>
+        {/* <!-- End Form Group --> */}
+
+        {/* <!-- Checkbox --> */}
+        <div className="flex items-center">
+          <div className="flex">
+            <input
+              id="remember-me"
+              name="remember-me"
+              type="checkbox"
+              className="pointer-events-none mt-0.5 shrink-0 rounded border-gray-200 text-blue-600 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:checked:border-blue-500 dark:checked:bg-blue-500 dark:focus:ring-offset-gray-800"
+            />
+          </div>
+          <div className="ml-3">
+            <label htmlFor="remember-me" className="text-sm dark:text-white">
+              Remember me
+            </label>
+          </div>
+        </div>
+        {/* <!-- End Checkbox --> */}
+
         <button
-          className=" w-full transform rounded-md  bg-gray-700 px-4 py-3 text-sm font-medium uppercase tracking-wider text-gray-100 transition-colors duration-300 hover:bg-gray-600 focus:bg-gray-600 focus:outline-none md:w-max"
           type="submit"
+          className="inline-flex items-center justify-center gap-2 rounded-md border border-transparent bg-blue-500 px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
         >
-          Sign In
+          Sign in
         </button>
-        <Button
-          className="p-button min-h-min text-sm"
-          // size="large"
-          onClick={() => void signIn("github")}
-          label="Sign in with GitHub"
-          raised
-          severity="secondary"
-        />
-        {status === "loading" && <p>Loading...</p>}
       </div>
     </form>
+    //{/* <!-- End Form --> */}
   );
 }

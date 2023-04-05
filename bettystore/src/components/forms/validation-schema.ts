@@ -23,7 +23,7 @@ export const registerSchema = z
 
 export const signinSchema = z.object({
   email: z.string().email(),
-  password: z.string(),
+  password: z.string().min(6),
 });
 
 export type registerType = z.infer<typeof registerSchema>;

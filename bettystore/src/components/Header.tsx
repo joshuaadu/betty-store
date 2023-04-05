@@ -1,7 +1,9 @@
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import React from "react";
 
 export default function Header() {
+  const { data: sessionData } = useSession();
   return (
     <header className="sticky inset-x-0 top-0 z-[48] flex w-full flex-wrap border-b bg-white py-2.5 text-sm dark:border-gray-700 dark:bg-gray-800 sm:flex-nowrap sm:justify-start sm:py-4 lg:pl-64">
       <nav
@@ -122,7 +124,7 @@ export default function Header() {
                     Signed in as
                   </p>
                   <p className="text-sm font-medium text-gray-800 dark:text-gray-300">
-                    james@site.com
+                    {sessionData?.user.name}
                   </p>
                 </div>
                 <div className="mt-2 py-2 first:pt-0 last:pb-0">
@@ -191,6 +193,26 @@ export default function Header() {
                     </svg>
                     Team Account
                   </a>
+                  <button
+                    className="flex w-full items-center gap-x-3.5 rounded-md px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                    onClick={() => void signOut()}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="h-6 w-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                      />
+                    </svg>
+                    Sign out
+                  </button>
                 </div>
               </div>
             </div>

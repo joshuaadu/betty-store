@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { type GetServerSideProps } from "next";
 import { getServerAuthSession } from "../../server/auth";
 
 import RegisterForm from "~/components/forms/RegisterForm";
 
 export default function RegisterPage() {
+  useEffect(() => {
+    document.body.className =
+      "dark:bg-slate-900 bg-gray-100 flex h-full items-center py-16";
+  });
   return (
     <main className="flex h-full w-full flex-1 items-center justify-center font-sans">
       <section className="mx-auto flex max-w-4xl flex-col overflow-hidden rounded-lg bg-white shadow-lg dark:bg-gray-800 md:h-max md:flex-row">
