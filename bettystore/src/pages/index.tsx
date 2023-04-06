@@ -44,33 +44,6 @@ const Home: NextPage = () => {
               <p className="mt-3 text-lg text-gray-800 dark:text-gray-400">
                 Build your business here. Take it anywhere.
               </p>
-              {/* <p className="text-2xl text-white">
-              {hello.data ? hello.data.greeting : "Loading tRPC query..."}
-            </p>
-            <p className="text-white">Username: {sessionData?.user.name}</p>
-            <p className="text-white">Users: {JSON.stringify(users?.data)}</p> */}
-              {/* <button
-                className=" rounded-full bg-white/10 p-4 text-2xl font-semibold text-white no-underline transition hover:bg-white/20"
-                onClick={() => void signOut()}
-              >
-                Sign out
-              </button>
-              <button
-                className=" rounded-full bg-white/10 p-4 text-2xl font-semibold text-white no-underline transition hover:bg-white/20"
-                onClick={() => {
-                  if (users?.data && users?.data[0]) {
-                    mutate({ role: "ADMIN", user_id: users.data[0]?.id });
-                  }
-                }}
-              >
-                Change user role
-              </button>
-              <button
-                className=" rounded-full bg-white/10 p-4 text-2xl font-semibold text-white no-underline transition hover:bg-white/20"
-                // onClick={() => {}}
-              >
-                <Link href="/dashboard"> Dashboard</Link>
-              </button> */}
             </div>
 
             <div className="relative mx-auto mt-10 max-w-5xl">
